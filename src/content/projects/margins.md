@@ -1,7 +1,7 @@
 ---
 title: Margins
 description: A read-everything-later research app for infovores and culturevores.
-image: /assets/margins-view-1.jpg
+image: /assets/margins.jpg
 dates: "2021 - Present"
 pubDate: 2023-10-22 00:00:00
 featured: true
@@ -25,6 +25,12 @@ Margins started in 2021 as a way to procrastinate from writing my newsletter, [T
 Like all good rabbit holes, it quickly spiraled out of control. I started scratching every itch I could think of for myself, then scrapped the whole thing, then rebuilt it. Many times, over and over.
 
 The result is an app that I use every day, and that I hope others will find useful too.
+
+<figure>
+    <img src="/assets/margins-view.jpg" alt="Margins screenshot" />
+    <figcaption>Exploring your library with views.</figcaption>
+</figure>
+
 
 <figure>
     <img src="/assets/margins-annotations.jpg" alt="Margins screenshot" />

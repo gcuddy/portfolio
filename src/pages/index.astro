@@ -14,9 +14,9 @@ const projects = (await getCollection("projects")).sort((a,b) => {
 		<h1 class="font-display text-balance">A list of projects by Gus Cuddy</h1>
         <div class="font-sans">
         </div>
-		<ul role="list" class="link-card-grid">
+		<ul role="list" class="md:grid grid-cols-12 p-0 gap-8">
             {projects.map((project) => (
-                <li>
+                <li class={project.data.featured ? 'col-span-12' : 'col-span-6'}>
                     <Card {project} />
                 </li>
                 // <Card
