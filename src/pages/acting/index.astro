@@ -1,0 +1,98 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Container from "../../layouts/Container.astro";
+import Window from "../../components/Window.astro";
+import Header from "../../components/Header.astro";
+import H1 from "../../components/H1.astro";
+---
+
+<!-- TODO: Shows here again -->
+<Layout title="Acting">
+  <Container>
+    <Header>
+        <H1>
+            Acting
+        </H1>
+    </Header>
+    <Window title="Headshots & Resume">
+      <article class="grid sm:grid-cols-4">
+        <a href="/images/a/cuddy-headshot-2021-beard-02.jpg"
+          ><img
+            src="/images/a/cuddy-headshot-2021-beard-02.jpg"
+            alt="Headshot of Gus Cuddy"
+            style="object-position: 20% 50%;"
+          /></a
+        >
+        <a href="/images/a/cuddy-headshot-2021-beard-01.jpg"
+          ><img
+            src="/images/a/cuddy-headshot-2021-beard-01.jpg"
+            alt="Headshot of Gus Cuddy"
+            style="object-position: 84% 50%;"
+          /></a
+        >
+        <a href="/images/a/cuddy-headshot-2021-2.jpg"
+          ><img
+            src="/images/a/cuddy-headshot-2021-2.jpg"
+            alt="Headshot of Gus Cuddy"
+            style="object-position: 84% 50%;"
+          /></a
+        >
+        <a href="/images/a/cuddy-headshot-2021-3.jpg"
+          ><img
+            src="/images/a/cuddy-headshot-2021-3.jpg"
+            alt="Headshot of Gus Cuddy"
+            style="object-position: 50% 11%;"
+          /></a
+        >
+        <!-- <a href="/images/a/cuddy-headshot-2021-1.jpg"
+          ><img
+            src="/images/a/cuddy-headshot-2021-1.jpg"
+            alt="Headshot of Gus Cuddy"
+            style="object-position: 11% 50%;"
+          /></a
+        > -->
+        <a href="/images/a/cuddy-headshot.jpg"
+          ><img
+            src="/images/a/cuddy-headshot.jpg"
+            alt="Headshot of Gus Cuddy"
+            style="object-position: top;"
+          /></a
+        >
+        <a href="/images/a/cuddy-headshot1.jpg"
+          ><img
+            src="/images/a/cuddy-headshot1.jpg"
+            alt="Headshot of Gus Cuddy"
+            style="object-position: top;"
+          /></a
+        >
+        <a href="/images/a/cuddy-headshot2.jpg"
+          ><img
+            src="/images/a/cuddy-headshot2.jpg"
+            alt="Headshot of Gus Cuddy"
+            style="object-position: top;"
+          /></a
+        >
+        <a href="/images/a/cuddy-headshot3.jpg"
+          ><img
+            src="/images/a/cuddy-headshot3.jpg"
+            alt="Headshot of Gus Cuddy"
+            style="object-position: top;"
+          /></a
+        >
+      </article>
+
+      <a class="block mx-auto" href="/assets/cuddy-acting-resume.pdf"
+        ><img src="/assets/cuddy-acting-resume.jpg" alt="Resume of Gus Cuddy" /></a>
+    </Window>
+  </Container>
+</Layout>
+<style>
+    .grid a {
+        /* @apply w-44 grow-0 shrink-0 basis-auto; */
+    }
+    .grid img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+</style>
