@@ -6,6 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        system: ["Inter var", ...defaultTheme.fontFamily.sans],
         sans: ["Gimlet Sans Variable Web", ...defaultTheme.fontFamily.sans],
         display: [
           "Roslindale Display Wide Web",
@@ -14,5 +15,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

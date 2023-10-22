@@ -12,6 +12,9 @@ export const collections = {
     schema: z.object({
       title: z.string(),
       description: z.string(),
+      dates: z.string().optional(),
+      featured: z.boolean().default(false),
+      pubDate: z.coerce.date(),
       image: z.string(),
       url: z.string(),
       github: z.string(),

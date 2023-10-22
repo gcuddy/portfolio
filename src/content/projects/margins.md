@@ -1,8 +1,10 @@
 ---
 title: Margins
-title: A read-everything-later research app for infovores and culturevores.
+description: A read-everything-later research app for infovores and culturevores.
 image: /assets/margins-view-1.jpg
 dates: "2021 - Present"
+pubDate: 2023-10-22 00:00:00
+featured: true
 url: https://margins.gg/
 tags:
     - Dev
