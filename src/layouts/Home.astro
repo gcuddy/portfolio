@@ -11,7 +11,7 @@ import { User, AtSign, Mail } from "lucide-astro";
 <Container>
   <div class="flex flex-col gap-8">
     <Header>
-      <H1>Gus is <a href="/notes">writing</a>, <a href="/about#acting">performing</a>, <a href="/projects">designing</a>, and more.</H1>
+      <H1>Gus is <a href="/projects">designing and developing</a>, <a href="/notes">writing</a>, <a href="/about#acting">performing</a>, and more.</H1>
     </Header>
     <!-- <header class="pt-16 max-w-prose mx-auto">
     </header> -->
@@ -41,7 +41,7 @@ import { User, AtSign, Mail } from "lucide-astro";
           <Window title="Newsletter">
             <Mail slot="meta" />
             <p>You might consider signing up for my weekly newsletter, The Curtain. It's about culture, art, media, and the internet. I try to make it feel personal, and hundreds of folks seem to love it.</p>
-            <form class="grow grid-cols-12 grid border" name="newsletter" netlify>
+            <form class="grow grid-cols-12 grid border" name="newsletter" data-netlify="true" netlify>
                 <span class="sr-only"><label>Email</label></span>
                 <input class="col-span-8 appearance-none p-2 bg-transparent" placeholder="Email" type="email" name="email" />
                 <button class="col-span-4 border-l hover:bg-rose-500">Submit</button>
