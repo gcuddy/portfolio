@@ -67,4 +67,4 @@ Margins is built with [Svelte](https://svelte.dev/) and [SvelteKit](https://kit.
 
 For a while it used the great [tRPC](https://www.trpc.io/) library for API calls, but I eventually migrated to a homegrown solution that uses similar Typescript magic to generate API routes and types.
 
-I did all the design and development myself, and I'm using [Figma](https://www.figma.com/) for design and prototyping, as well as relying on [Shadcn](https://www.ui.shadcn.com) (the [Svelte port](https://www.shadcn-svelte.com), which is built off the wonderful component library [Melt UI](https://www.melt-ui.com))
+I did all the design and development myself, and I'm using [Figma](https://www.figma.com/) for design and prototyping, as well as relying on [Shadcn](https://ui.shadcn.com) (the [Svelte port](https://www.shadcn-svelte.com), which is built off the wonderful component library [Melt UI](https://www.melt-ui.com)).
