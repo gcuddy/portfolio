@@ -1,0 +1,66 @@
+---
+import H1 from "../../components/H1.astro";
+import Header from "../../components/Header.astro";
+import Window from "../../components/Window.astro";
+import Container from "../../layouts/Container.astro";
+import Layout from "../../layouts/Layout.astro";
+import { dateRegex } from "../../lib/constants"
+import { getCollection } from "astro:content";
+const lookup: Record<string, Date> = {};
+const notes = (await getCollection("notes")).sort((a, b) => {
+  const aMatch = a.id.match(dateRegex);
+  const bMatch = b.id.match(dateRegex);
+  console.log(aMatch, bMatch)
+  if (aMatch && bMatch) {
+    const aDate = new Date(
+      parseInt(aMatch[1]),
+      parseInt(aMatch[2]) - 1,
+      parseInt(aMatch[3]),
+    );
+    lookup[a.id] = aDate;
+    const bDate = new Date(
+      parseInt(bMatch[1]),
+      parseInt(bMatch[2]) - 1,
+      parseInt(bMatch[3]),
+    );
+    lookup[b.id] = bDate;
+    return bDate.valueOf() - aDate.valueOf();
+  }
+  return 0;
+});
+---
+
+<Layout title="Notes">
+  <Container>
+    <Header>
+      <H1>Notes</H1>
+    </Header>
+    <Window>
+      <div class="bg-white text-black px-4 py-2">
+        <p>
+          Note: I have a lot of old, embarassing writing here. Take it with a
+          grain of salt. Check out my <a class="underline" href="https://guscuddy.substack.com">substack</a> for more recent material.
+        </p>
+      </div>
+      <ul class="list-none p-0">
+        {
+          notes.map((note) => (
+            <li class="border-b border-gray-300 py-2 flex justify-between items-center">
+
+              <a href={dateRegex.test(note.slug) ? `/notes/${note.slug.replace(dateRegex, "").slice(1)}` : note.slug}>
+                {note.data.title}
+              </a>
+              <span class="text-base text-stone-400">
+                {lookup[note.id]?.toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </Window>
+  </Container>
+</Layout>

@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Window from "./Window.astro";
+import { formatDate } from "../lib/utils";
+
+interface Props {
+  entry: CollectionEntry<"notes">;
+  date?: Date | null;
+}
+
+const { entry, date } = Astro.props;
+
+const { Content } = await entry.render();
+---
+
+<Window
+  title={entry.data.title}
+  description={entry.data.description}
+  meta={date ? formatDate(date) : undefined}
+>
+  <div
+    class="prose antialiased prose-stone prose-invert prose-lg font-system text-white mx-auto py-9"
+  >
+    <Content />
+  </div>
+</Window>

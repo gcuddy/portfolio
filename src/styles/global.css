@@ -1,7 +1,7 @@
 @font-face {
   src:
-    url("../fonts/GimletSansVariable[ital,opsz,wght].woff2") format("woff2"),
-    url("../fonts/GimletSansVariable[ital,opsz,wght].woff") format("woff");
+    url("/fonts/GimletSansVariable[ital,opsz,wght].woff2") format("woff2"),
+    url("/fonts/GimletSansVariable[ital,opsz,wght].woff") format("woff");
   font-family: "Gimlet Sans Variable Web";
   font-weight: 300 900;
 }
@@ -29,18 +29,29 @@ em {
 
 @font-face {
   src:
-    url("../fonts/RoslindaleExtendedVariable-VF.woff2") format("woff2"),
-    url("../fonts/RoslindaleExtendedVariable-VF.woff") format("woff");
+    url("/fonts/RoslindaleExtendedVariable-VF.woff2") format("woff2"),
+    url("/fonts/RoslindaleExtendedVariable-VF.woff") format("woff");
   font-family: "Roslindale Display Wide Web";
   font-style: normal;
   font-weight: normal;
 }
 
-h1, h2, h3, h4 {
-    text-wrap: balance;
+h1,
+h2,
+h3,
+h4 {
+  /* text-wrap: balance; */
 }
 
-
 .text-balance {
-    text-wrap: balance;
+  text-wrap: balance;
+}
+
+:root {
+  font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: "Inter var", sans-serif;
+  }
 }

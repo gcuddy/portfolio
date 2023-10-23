@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        system: ["Inter var", ...defaultTheme.fontFamily.sans],
+        system: ["Inter var", "Inter", ...defaultTheme.fontFamily.sans],
         sans: ["Gimlet Sans Variable Web", ...defaultTheme.fontFamily.sans],
         display: [
           "Roslindale Display Wide Web",

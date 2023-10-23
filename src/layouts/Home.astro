@@ -1,0 +1,66 @@
+---
+import Container from "./Container.astro";
+import Layout from "./Layout.astro";
+import H1 from "../components/H1.astro";
+import Window from "../components/Window.astro";
+import Header from "../components/Header.astro";
+import { User, AtSign, Mail } from "lucide-astro";
+---
+
+<Layout />
+<Container>
+  <div class="flex flex-col gap-8">
+    <Header>
+      <H1>Gus is <a href="/notes">writing</a>, <a href="/about#acting">performing</a>, <a href="/projects">designing</a>, and more.</H1>
+    </Header>
+    <!-- <header class="pt-16 max-w-prose mx-auto">
+    </header> -->
+    <div class="flex flex-col gap-4">
+      <Window title="About">
+        <User slot="meta" />
+
+        <div
+          class="prose mx-auto prose-stone prose-lg sm:prose-xl prose-invert text-white"
+        >
+          <slot />
+        </div>
+      </Window>
+      <div class="flex flex-col items-stretch md:grid gap-4 grid-cols-12">
+        <div class="col-span-4">
+          <Window title="Contact">
+            <AtSign slot="meta" />
+            <dl class="grid grid-cols-12 text-base lg:text-lg">
+              <dt>Email</dt>
+              <dd><a href="mailto:gus@guscuddy.com">gus@guscuddy.com</a></dd>
+              <dt>Twitter</dt>
+              <dd><a href="https://twitter.com/guscuddy">@guscuddy</a></dd>
+            </dl>
+          </Window>
+        </div>
+        <div class="col-span-8">
+          <Window title="Newsletter">
+            <Mail slot="meta" />
+            <p>You might consider signing up for my weekly newsletter, The Curtain. It's about culture, art, media, and the internet. I try to make it feel personal, and hundreds of folks seem to love it.</p>
+            <form class="grow grid-cols-12 grid border" name="newsletter" netlify>
+                <span class="sr-only"><label>Email</label></span>
+                <input class="col-span-8 appearance-none p-2 bg-transparent" placeholder="Email" type="email" name="email" />
+                <button class="col-span-4 border-l hover:bg-rose-500">Submit</button>
+            </form>
+          </Window>
+        </div>
+      </div>
+    </div>
+  </div>
+</Container>
+
+<style>
+  a {
+    @apply underline underline-offset-2 decoration-rose-500;
+  }
+  dl.grid dt {
+    @apply col-span-4;
+  }
+  dl.grid dd {
+    @apply col-span-8;
+  }
+</style>
