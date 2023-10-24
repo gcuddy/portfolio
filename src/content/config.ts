@@ -11,6 +11,9 @@ export const collections = {
     type: "content",
     schema: z.object({
       description: z.string().optional(),
+      draft: z.boolean().default(false),
+      //   date could also be in filename
+      pubDate: z.coerce.date().optional(),
       title: z.string(),
     }),
   }),

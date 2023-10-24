@@ -4,29 +4,23 @@ import Header from "../../components/Header.astro";
 import Window from "../../components/Window.astro";
 import Container from "../../layouts/Container.astro";
 import Layout from "../../layouts/Layout.astro";
-import { dateRegex } from "../../lib/constants"
+import { dateRegex } from "../../lib/constants";
 import { getCollection } from "astro:content";
+import { makeDateStringIntoDate } from "../../lib/utils";
 const lookup: Record<string, Date> = {};
-const notes = (await getCollection("notes")).sort((a, b) => {
-  const aMatch = a.id.match(dateRegex);
-  const bMatch = b.id.match(dateRegex);
-  console.log(aMatch, bMatch)
-  if (aMatch && bMatch) {
-    const aDate = new Date(
-      parseInt(aMatch[1]),
-      parseInt(aMatch[2]) - 1,
-      parseInt(aMatch[3]),
-    );
-    lookup[a.id] = aDate;
-    const bDate = new Date(
-      parseInt(bMatch[1]),
-      parseInt(bMatch[2]) - 1,
-      parseInt(bMatch[3]),
-    );
-    lookup[b.id] = bDate;
-    return bDate.valueOf() - aDate.valueOf();
-  }
-  return 0;
+const notes = (await getCollection("notes", ({data}) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+})).sort((a, b) => {
+  const aDate = a.data.pubDate
+    ? new Date(a.data.pubDate)
+    : makeDateStringIntoDate(a.id);
+  lookup[a.id] = aDate;
+  const bDate = b.data.pubDate
+    ? new Date(b.data.pubDate)
+    : makeDateStringIntoDate(b.id);
+  lookup[b.id] = bDate;
+
+  return bDate.valueOf() - aDate.valueOf();
 });
 ---
 
@@ -39,15 +33,28 @@ const notes = (await getCollection("notes")).sort((a, b) => {
       <div class="bg-white text-black px-4 py-2">
         <p>
           Note: I have a lot of old, embarassing writing here. Take it with a
-          grain of salt. Check out my <a class="underline" href="https://guscuddy.substack.com">substack</a> for more recent material.
+          grain of salt. Check out my <a
+            class="underline"
+            href="https://guscuddy.substack.com">substack</a
+          > for more recent material.
         </p>
       </div>
       <ul class="list-none p-0">
         {
           notes.map((note) => (
             <li class="border-b border-gray-300 py-2 flex justify-between items-center">
-
-              <a href={dateRegex.test(note.slug) ? `/notes/${note.slug.replace(dateRegex, "").slice(1)}` : note.slug}>
+              <a
+                href={
+                  // If slug has a date, remove it and make our url /notes/:slug
+                  dateRegex.test(note.slug)
+                    ? `/notes/${note.slug.replace(dateRegex, "").slice(1)}`
+                    : // If the filename doesn't contain a date, make our url /notes/:s;ig
+                    !dateRegex.test(note.id)
+                    ? `/notes/${note.slug}`
+                    : // Otherwise, just use the explicitly set slug
+                      note.slug
+                }
+              >
                 {note.data.title}
               </a>
               <span class="text-base text-stone-400">
