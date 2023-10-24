@@ -1,7 +1,7 @@
 ---
 title: Margins
 description: A read-everything-later research app for infovores and culturevores.
-image: /assets/margins.jpg
+image: /assets/margins-landing.jpg
 dates: "2021 - Present"
 pubDate: 2023-10-22 00:00:00
 featured: true
@@ -42,7 +42,7 @@ The result is an app that I use every day, and that I hope others will find usef
 Margins is a read-everything-later research app for infovores and culturevores. It's a place to save and organize all the things you want to read, watch, and listen to. It's a place to take notes, make annotations, and share collections with friends. And it's also a place to discover new things, and to get recommendations from people you trust: subscriptions, newsletters, podcasts, and more.
 
 <figure>
-    <img src="/assets/margins-library.jpg" alt="Margins screenshot" />
+    <img src="/assets/margins.jpg" alt="Margins screenshot" />
     <figcaption>Looking over a library in Margins.</figcaption>
 </figure>
 
