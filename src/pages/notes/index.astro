@@ -8,9 +8,11 @@ import { dateRegex } from "../../lib/constants";
 import { getCollection } from "astro:content";
 import { makeDateStringIntoDate } from "../../lib/utils";
 const lookup: Record<string, Date> = {};
-const notes = (await getCollection("notes", ({data}) => {
+const notes = (
+  await getCollection("notes", ({ data }) => {
     return import.meta.env.PROD ? data.draft !== true : true;
-})).sort((a, b) => {
+  })
+).sort((a, b) => {
   const aDate = a.data.pubDate
     ? new Date(a.data.pubDate)
     : makeDateStringIntoDate(a.id);
@@ -32,11 +34,10 @@ const notes = (await getCollection("notes", ({data}) => {
     <Window>
       <div class="bg-white text-black px-4 py-2">
         <p>
-          Note: I have a lot of old, embarassing writing here. Take it with a
-          grain of salt. Check out my <a
+          Please check out my <a
             class="underline"
             href="https://guscuddy.substack.com">substack</a
-          > for more recent material.
+          > for more recent material!
         </p>
       </div>
       <ul class="list-none p-0">
