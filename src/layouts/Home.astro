@@ -4,55 +4,146 @@ import Layout from "./Layout.astro";
 import H1 from "../components/H1.astro";
 import Window from "../components/Window.astro";
 import Header from "../components/Header.astro";
-import { User, AtSign, Mail } from "lucide-astro";
+import { User, AtSign, Mail, Info, Sparkles, Briefcase, History } from "lucide-astro";
+
+const date = new Date();
 ---
 
-<Layout />
-<Container>
-  <div class="flex flex-col gap-8">
-    <Header>
-      <H1>Gus is <a href="/projects">designing and developing</a>, <a href="/notes">writing</a>, <a href="/acting">performing</a>, and more.</H1>
-    </Header>
-    <!-- <header class="pt-16 max-w-prose mx-auto">
-    </header> -->
-    <div class="flex flex-col gap-4">
-      <Window title="About">
-        <User slot="meta" />
+<Layout>
+  <Container>
+    <div class="flex flex-col gap-8">
+      <Header>
+        <H1>
+          Gus is <a href="/projects">designing and developing</a>, <a
+            href="/notes">writing</a
+          >, <a href="/acting">performing</a>, and more.
+        </H1>
+      </Header>
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-col items-tretch md:grid gap-4 grid-cols-12">
+          <div class="col-span-6">
+            <Window title="Latest">
+              <Sparkles slot="meta" />
+              <div
+                class="prose mx-auto prose-stone prose-lg sm:prose-xl prose-invert text-white"
+              >
+                <p>
+                  Currently doing a 12-week residency at the <a
+                    href="https://www.recurse.com/">Recurse Center</a
+                  >! I'm going to be exploring my programming interests and
+                  research, and looking at crossover points between computing,
+                  art, and theatre.
+                </p>
+              </div>
+            </Window>
+          </div>
+          <div class="col-span-6">
+            <Window title="Recent & featured work">
+              <Briefcase slot="meta" />
+              <!-- TODO: pull from content collections? Better design here? -->
+              <ul class="featured-work flex flex-col h-full grow justify-between lg:gap-4">
+                <li>
+                    <a href="/projects/margins" class="font-semibold">Margins</a> — a research app
+                </li>
+                <li class="lg:text-right">
+                    <a href="/projects/met-app" class="font-semibold">Met Explorer</a> - random met art app
+                </li>
+                <li>
+                    <a href="https://guscuddy.substack.com/p/the-curtain-112-what-web3-gets-wrong" class="font-semibold">What Web3 Gets Wrong About What's Wrong With Art</a> - essay
+                </li>
+              </ul>
+            </Window>
+          </div>
+        </div>
+        <Window title="About">
+          <User slot="meta" />
 
-        <div
-          class="prose mx-auto prose-stone prose-lg sm:prose-xl prose-invert text-white"
-        >
-          <slot />
-        </div>
-      </Window>
-      <div class="flex flex-col items-stretch md:grid gap-4 grid-cols-12">
-        <div class="col-span-4">
-          <Window title="Contact">
-            <AtSign slot="meta" />
-            <dl class="grid grid-cols-12 text-base lg:text-lg">
-              <dt>Email</dt>
-              <dd><a href="mailto:gus@guscuddy.com">gus@guscuddy.com</a></dd>
-              <dt>Twitter</dt>
-              <dd><a href="https://twitter.com/guscuddy">@guscuddy</a></dd>
-            </dl>
-          </Window>
-        </div>
-        <div class="col-span-8">
-          <Window title="Newsletter">
-            <Mail slot="meta" />
-            <p>You might consider signing up for my weekly newsletter, The Curtain. It's about culture, art, media, and the internet. I try to make it feel personal, and hundreds of folks seem to love it.</p>
-            <form class="grow grid-cols-12 grid border" name="newsletter" data-netlify="true" method="post">
+          <div
+            class="prose mx-auto prose-stone prose-lg sm:prose-xl prose-invert text-white"
+          >
+            <slot />
+          </div>
+        </Window>
+        <div class="flex flex-col items-stretch md:grid gap-4 grid-cols-12">
+          <div class="col-span-4">
+            <Window title="Contact">
+              <AtSign slot="meta" />
+              <dl class="grid grid-cols-12 text-base lg:text-lg">
+                <dt>Email</dt>
+                <dd><a href="mailto:gus@guscuddy.com">gus@guscuddy.com</a></dd>
+                <dt>Twitter</dt>
+                <dd><a href="https://twitter.com/guscuddy">@guscuddy</a></dd>
+              </dl>
+            </Window>
+          </div>
+          <div class="col-span-8">
+            <Window title="Newsletter">
+              <Mail slot="meta" />
+              <p>
+                You might consider signing up for my weekly newsletter, The
+                Curtain. It's about culture, art, media, and the internet. I try
+                to make it feel personal, and hundreds of folks seem to love it.
+              </p>
+              <form
+                class="grow grid-cols-12 grid border"
+                name="newsletter"
+                data-netlify="true"
+                method="post"
+              >
                 <span class="sr-only"><label>Email</label></span>
-                <input class="col-span-8 appearance-none p-2 bg-transparent" placeholder="Email" type="email" name="email" />
-                <button class="col-span-4 border-l hover:bg-rose-500">Submit</button>
-            </form>
-          </Window>
+                <input
+                  class="col-span-8 appearance-none p-2 bg-transparent"
+                  placeholder="Email"
+                  type="email"
+                  name="email"
+                />
+                <button class="col-span-4 border-l hover:bg-rose-500"
+                  >Submit</button
+                >
+              </form>
+            </Window>
+          </div>
+        </div>
+        <div class="flex flex-col items-stretch md:grid gap-4 grid-cols-12">
+          <div class="col-span-9">
+            <Window title="Colophon">
+              <Info slot="meta" />
+              <p>
+                This website is typeset in David Jonathan Ross's lovely <a
+                  href="https://djr.com/roslindale/">Roslindale</a
+                > and <a
+                  href="https://djr.com/notes/gimlet-sans-optical-sizes-font-of-the-month"
+                  >Gimlet Sans</a
+                > fonts, both of which are being used on the mini licenses from
+                his Font of the Month club. It also uses the now-classic <a
+                  href="https://rsms.me/inter/">Inter</a
+                >. The site is built with <a href="https://astro.build">Astro</a
+                >, and deployed on Netlify.
+              </p>
+            </Window>
+          </div>
+          <div class="col-span-3">
+            <Window title="Last Update">
+              <History slot="meta" />
+              <p>
+                <time class="text-base tracking-tight font-mono text-balance text-center" datetime={date.toISOString()}>
+                    {date.toLocaleDateString("en-US", {
+                      weekday: "long",
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                      hour: "numeric",
+                    })}
+                </time>
+              </p>
+            </Window>
+            <!-- last update -->
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</Container>
-
+  </Container>
+</Layout>
 <style>
   a {
     @apply underline underline-offset-2 decoration-rose-500;
@@ -63,4 +154,5 @@ import { User, AtSign, Mail } from "lucide-astro";
   dl.grid dd {
     @apply col-span-8;
   }
+
 </style>
