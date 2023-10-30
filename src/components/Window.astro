@@ -13,14 +13,14 @@ const { title, description, meta, variant } = Astro.props;
   <div class="h-full flex flex-col border border-white overflow-hidden mx-auto">
     {
       title && (
-        <div class="bg-white text-black px-4 py-1">
+        <div class="bg-white text-black px-4 py-2">
           <div class="flex flex-wrap gap-2 items-center justify-between">
             <div class="flex flex-col gap-1.5">
               <h1
                 class={`font-bold ${
                   variant === "display"
                     ? "font-display text-3xl md:text-4xl lg:text-5xl"
-                    : "font-sans text-2xl"
+                    : "font-sans text-xl"
                 }`}
               >
                 {title}
