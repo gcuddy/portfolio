@@ -1,12 +1,15 @@
----
-import type { CollectionEntry } from "astro:content";
+<script lang="ts">
+    import type { CollectionEntry } from "astro:content";
 
-interface Props {
+interface $$Props {
   project: CollectionEntry<"projects">;
 }
 
-const { data, slug } = Astro.props.project;
----
+export let project: $$Props["project"];
+
+$: ({ data, slug } = project);
+
+</script>
 
 <!-- TODO: get commits from githubs... -->
 <div class="relative transition card-outer">
@@ -19,8 +22,7 @@ const { data, slug } = Astro.props.project;
       decoding="async"
     />
   </a>
-  {
-    data.featured && (
+  {#if data.featured}
       <div class="absolute -top-3 -right-3 rotate-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -37,8 +39,7 @@ const { data, slug } = Astro.props.project;
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
         </svg>
       </div>
-    )
-  }
+ {/if}
 </div>
 
 <style>

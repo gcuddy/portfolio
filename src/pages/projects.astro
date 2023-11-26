@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Card from "../components/Card.svelte";
 import H1 from "../components/H1.astro";
 import Header from "../components/Header.astro";
 import Container from "../layouts/Container.astro";
@@ -19,6 +19,7 @@ const projects = (await getCollection("projects")).sort((a, b) => {
     <div class="w-fit mx-auto my-6 p-2 border bg-white text-black -rotate-0">
             Attention: This page is a work in progress.
     </div>
+
     <ul role="list" class="flex flex-col md:grid grid-cols-12 p-0 gap-8">
       {
         projects.map((project) => (
