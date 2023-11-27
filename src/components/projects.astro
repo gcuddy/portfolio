@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Card from "./Card.svelte";
 import H1 from "./H1.astro";
@@ -7,7 +7,20 @@ import Header from "./Header.astro";
 import Container from "../layouts/Container.astro";
 import ProjectTabs from "./projects/project-tabs.astro";
 
-const projects = (await getCollection("projects")).sort((a, b) => {
+type Project = CollectionEntry<"projects">;
+
+interface Props {
+  scope?: Project["data"]["scope"];
+}
+
+const { scope } = Astro.props;
+
+const projects = (await getCollection("projects", ({data}) => {
+    if (scope) {
+        return data.scope === scope;
+    }
+    return true
+})).sort((a, b) => {
   return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
 });
 ---

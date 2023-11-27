@@ -20,5 +20,7 @@
   .active {
     text-decoration: underline;
     text-decoration-style: wavy;
+    text-underline-offset: 4px;
+    @apply decoration-rose-500;
   }
 </style>
