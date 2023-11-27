@@ -6,6 +6,7 @@ import H1 from "./H1.astro";
 import Header from "./Header.astro";
 import Container from "../layouts/Container.astro";
 import ProjectTabs from "./projects/project-tabs.astro";
+import { ListFilter } from "lucide-astro";
 
 type Project = CollectionEntry<"projects">;
 
@@ -15,27 +16,35 @@ interface Props {
 
 const { scope } = Astro.props;
 
-const projects = (await getCollection("projects", ({data}) => {
+const projects = (
+  await getCollection("projects", ({ data }) => {
     if (scope) {
-        return data.scope === scope;
+      return data.scope === scope;
     }
-    return true
-})).sort((a, b) => {
+    return true;
+  })
+).sort((a, b) => {
   return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
 });
 ---
 
+<!-- TODO: alternate grid where I do three columns, and divide up array into columns -->
 <Layout useViewTransitions={true} title="Projects">
   <Container>
     <Header>
-      <H1 class="font-display text-balance">A list of projects by Gus Cuddy</H1>
+      <!-- <H1 class="font-display text-balance">A list of projects by Gus Cuddy</H1> -->
+      <div class="flex justify-center items-center gap-6">
+        <ProjectTabs />
+        <button>
+          <ListFilter size={16} />
+        </button>
+      </div>
     </Header>
-    <ProjectTabs />
-    <div class="w-fit mx-auto my-6 p-2 border bg-white text-black -rotate-0">
+    <!-- <div class="w-fit mx-auto my-6 p-2 border bg-white text-black -rotate-0">
       Attention: This page is a work in progress.
-    </div>
+    </div> -->
 
-    <ul role="list" class="flex flex-col md:grid grid-cols-12 p-0 gap-8">
+    <ul role="list" class="flex flex-col md:grid grid-cols-12 p-0 gap-8 mt-12">
       {
         projects.map((project) => (
           <li class={project.data.featured ? "col-span-12" : "col-span-6"}>

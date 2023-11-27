@@ -24,7 +24,8 @@ const { title, useViewTransitions } = Astro.props;
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
     <title>Gus Cuddy{title && ` — ${title}`}</title>
-    {useViewTransitions && <ViewTransitions />}
+    <ViewTransitions />
+    <!-- {useViewTransitions && } -->
     <BaseHead />
   </head>
   <body>

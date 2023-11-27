@@ -26,7 +26,7 @@ export const collections = {
       featured: z.boolean().default(false),
       pubDate: z.coerce.date(),
       image: z.string(),
-      url: z.string(),
+      url: z.string().optional(),
       github: z.string(),
       tags: z.array(z.string()).default([]),
       technologies: z.array(z.string()).default([]),

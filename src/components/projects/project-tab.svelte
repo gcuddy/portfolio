@@ -10,7 +10,7 @@
 
 <a
   href={tab.url}
-  class="relative px-3 text-sm cursor-pointer whitespace-nowrap transition"
+  class="relative px-3 text-lg cursor-pointer whitespace-nowrap transition"
   class:active
 >
   {tab.name}
