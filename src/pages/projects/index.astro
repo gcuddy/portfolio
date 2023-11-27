@@ -1,10 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
-import Card from "../../components/Card.svelte";
-import H1 from "../../components/H1.astro";
-import Header from "../../components/Header.astro";
-import Container from "../../layouts/Container.astro";
 import Projects from "../../components/projects.astro";
 
 const projects = (await getCollection("projects")).sort((a, b) => {

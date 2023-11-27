@@ -6,6 +6,7 @@ import H1 from "./H1.astro";
 import Header from "./Header.astro";
 import Container from "../layouts/Container.astro";
 import ProjectTabs from "./projects/project-tabs.astro";
+import ProjectFilter from "./projects/project-filter.svelte";
 import { ListFilter } from "lucide-astro";
 
 type Project = CollectionEntry<"projects">;
@@ -14,7 +15,10 @@ interface Props {
   scope?: Project["data"]["scope"];
 }
 
+console.log({ url: Astro.url.search });
+
 const { scope } = Astro.props;
+
 
 const projects = (
   await getCollection("projects", ({ data }) => {
@@ -26,6 +30,9 @@ const projects = (
 ).sort((a, b) => {
   return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
 });
+
+const tags = Array.from(new Set(projects.flatMap((project) => project.data.tags)));
+const technologies = Array.from(new Set(projects.flatMap((project) => project.data.technologies)));
 ---
 
 <!-- TODO: alternate grid where I do three columns, and divide up array into columns -->
@@ -35,10 +42,12 @@ const projects = (
       <!-- <H1 class="font-display text-balance">A list of projects by Gus Cuddy</H1> -->
       <div class="flex justify-center items-center gap-6">
         <ProjectTabs />
-        <button>
+        {Astro.url.search}
+        <a href={`${Astro.url.pathname}?filter`}>
           <ListFilter size={16} />
-        </button>
+        </a>
       </div>
+      <ProjectFilter {tags} {technologies} client:only />
     </Header>
     <!-- <div class="w-fit mx-auto my-6 p-2 border bg-white text-black -rotate-0">
       Attention: This page is a work in progress.

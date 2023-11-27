@@ -13,6 +13,8 @@
     "@astrojs/svelte": "^4.0.4",
     "@astrojs/tailwind": "^5.0.2",
     "astro": "^3.6.0",
+    "bits-ui": "^0.9.8",
+    "cmdk-sv": "^0.0.12",
     "lucide-astro": "^0.288.0",
     "svelte": "^5.0.0-next.1"
   },
