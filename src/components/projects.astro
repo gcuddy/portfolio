@@ -1,23 +1,25 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.svelte";
-import H1 from "../components/H1.astro";
-import Header from "../components/Header.astro";
+import Card from "./Card.svelte";
+import H1 from "./H1.astro";
+import Header from "./Header.astro";
 import Container from "../layouts/Container.astro";
+import ProjectTabs from "./projects/project-tabs.astro";
 
 const projects = (await getCollection("projects")).sort((a, b) => {
   return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
 });
 ---
 
-<Layout title="Projects">
+<Layout useViewTransitions={true} title="Projects">
   <Container>
     <Header>
       <H1 class="font-display text-balance">A list of projects by Gus Cuddy</H1>
     </Header>
+    <ProjectTabs />
     <div class="w-fit mx-auto my-6 p-2 border bg-white text-black -rotate-0">
-            Attention: This page is a work in progress.
+      Attention: This page is a work in progress.
     </div>
 
     <ul role="list" class="flex flex-col md:grid grid-cols-12 p-0 gap-8">

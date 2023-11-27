@@ -1,0 +1,40 @@
+---
+Astro.url.pathname;
+
+import { slide, fade } from "astro:transitions";
+import ProjectTab from "./project-tab.svelte";
+import ProjectTabActiveIndicator from "./project-tab-active-indicator.svelte";
+
+const tabs = [
+  {
+    name: "All",
+    url: "/projects/all",
+  },
+  {
+    name: "Projects",
+    url: "/projects",
+  },
+  {
+    name: "Experiments",
+    url: "/projects/experiments",
+  },
+];
+---
+
+<script></script>
+
+<div class="flex">
+  {
+    tabs.map((tab) => (
+      <>
+        <ProjectTab {tab}>
+          {Astro.url.pathname === tab.url && (
+            <div>
+              <ProjectTabActiveIndicator />
+            </div>
+          )}
+        </ProjectTab>
+      </>
+    ))
+  }
+</div>
