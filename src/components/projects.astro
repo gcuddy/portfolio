@@ -65,10 +65,10 @@ const technologies = Array.from(new Set(projects.flatMap((project) => project.da
 <Layout useViewTransitions={true} title="Projects">
   <Container>
     <Header>
-      <!-- <H1 class="font-display text-balance">A list of projects by Gus Cuddy</H1> -->
-      <div class="flex justify-center items-center gap-6">
+      <H1 class="font-display text-balance">Projects</H1>
+      <div class="relative w-fit sm:mx-auto">
         <ProjectTabs />
-        <a href={Astro.url.searchParams.has('filter') ? Astro.url.pathname : `${Astro.url.pathname}?filter`} class={Astro.url.searchParams.has('filter') ? 'text-rose-500' : ''}>
+        <a class="absolute -right-4 top-1/2 -translate-y-1/2" href={Astro.url.searchParams.has('filter') ? Astro.url.pathname : `${Astro.url.pathname}?filter`} class={Astro.url.searchParams.has('filter') ? 'text-rose-500' : ''}>
           <ListFilter size={16} />
         </a>
       </div>
