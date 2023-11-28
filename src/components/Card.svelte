@@ -27,11 +27,12 @@
         decoding="async"
       />
     {:else}
-      <div class="flex items-center truncate gap-3">
-        <div class="bg-white text-black px-6 font-sans">
+      <div class="flex flex-col gap-3">
+        <div class="bg-white text-black px-3 font-sans flex items-center justify-between">
           <span>{data.title}</span>
+          <span class="bg-rose-500 rounded-full text-xs font-mono uppercase text-white px-1.5 py-0.5 font-medium">Experiment</span>
         </div>
-        <span class="truncate text-sm">{data.description}</span>
+        <span class="text-sm p-4">{data.description}</span>
       </div>
     {/if}
   </a>

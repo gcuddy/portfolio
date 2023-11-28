@@ -128,9 +128,9 @@ const { Content } = await entry.render();
             <dd>
               {
                 entry.data.tags.map((tag) => (
-                  <span class="text-xs inline-block bg-stone-500 text-white rounded-full px-3 py-1 font-semibold mr-2 mb-2">
+                  <a href={`/projects/all?filter&tag=${tag}`} class="text-xs inline-block bg-stone-500 text-white rounded-full px-3 py-1 font-semibold mr-2 mb-2">
                     {tag}
-                  </span>
+                  </a>
                 ))
               }
             </dd>
@@ -140,9 +140,9 @@ const { Content } = await entry.render();
             <dd>
               {
                 entry.data.technologies.map((tech) => (
-                  <span class="text-xs inline-block bg-stone-500 text-white rounded-full px-3 py-1 font-semibold mr-2 mb-2">
+                  <a href={`/projects/all?filter&tech=${tech}`} class="text-xs inline-block bg-stone-500 text-white rounded-full px-3 py-1 font-semibold mr-2 mb-2">
                     {tech}
-                  </span>
+                  </a>
                 ))
               }
             </dd>
