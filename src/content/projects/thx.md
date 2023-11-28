@@ -13,6 +13,9 @@ technologies:
     - Web Audio API
 github: gcuddy/thx
 scope: experiment
+iframe: true
 ---
+
+**NOTE: TURN YOUR VOLUME DOWN!**
 
 I tried to use the Web Audio API to re-create the THX opening logo sound.

@@ -22,16 +22,39 @@ console.log({ url: Astro.url.search });
 
 const { scope } = Astro.props;
 
+const enabledTags = Astro.url.searchParams.getAll("tag");
+const enabledTechnologies = Astro.url.searchParams.getAll("tech");
 
+console.log({ enabledTags, enabledTechnologies });
 const projects = (
   await getCollection("projects", ({ data }) => {
+    let shouldShow = true;
     if (scope) {
-      return data.scope === scope;
+      shouldShow = data.scope === scope;
     }
-    return true;
+    if (!shouldShow) {
+      return false;
+    }
+    if (enabledTags.length > 0) {
+      shouldShow = enabledTags.every((tag) => data.tags.includes(tag));
+    }
+    if (!shouldShow) {
+      return false;
+    }
+    if (enabledTechnologies.length > 0) {
+      shouldShow = enabledTechnologies.every((technology) => data.technologies.includes(technology));
+    }
+    return shouldShow;
   })
 ).sort((a, b) => {
-  return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+    // first, sort by featured, then by pubdate
+    if (a.data.featured && !b.data.featured) {
+      return -1;
+    }
+    if (!a.data.featured && b.data.featured) {
+      return 1;
+    }
+    return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
 });
 
 const tags = Array.from(new Set(projects.flatMap((project) => project.data.tags)));
@@ -45,21 +68,20 @@ const technologies = Array.from(new Set(projects.flatMap((project) => project.da
       <!-- <H1 class="font-display text-balance">A list of projects by Gus Cuddy</H1> -->
       <div class="flex justify-center items-center gap-6">
         <ProjectTabs />
-        {Astro.url.search}
-        <a href={`${Astro.url.pathname}?filter`}>
+        <a href={Astro.url.searchParams.has('filter') ? Astro.url.pathname : `${Astro.url.pathname}?filter`} class={Astro.url.searchParams.has('filter') ? 'text-rose-500' : ''}>
           <ListFilter size={16} />
         </a>
       </div>
-      <ProjectFilter {tags} {technologies} client:only />
+      <ProjectFilter url={Astro.url} {tags} {technologies} />
     </Header>
     <!-- <div class="w-fit mx-auto my-6 p-2 border bg-white text-black -rotate-0">
       Attention: This page is a work in progress.
     </div> -->
 
-    <ul role="list" class="flex flex-col md:grid grid-cols-12 p-0 gap-8 mt-12">
+    <ul role="list" class="flex flex-col md:grid grid-cols-12 p-0 gap-8 mt-12 items-center">
       {
         projects.map((project) => (
-          <li class={project.data.featured ? "col-span-12" : "col-span-6"}>
+          <li class={project.data.featured ? "col-span-6" : "col-span-4"}>
             <Card {project} />
           </li>
         ))

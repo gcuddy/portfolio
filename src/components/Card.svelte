@@ -11,8 +11,11 @@
 </script>
 
 <!-- TODO: get commits from githubs... -->
-<div class="relative transition card-outer">
-  <a class="card" href={`/project/${slug}`}>
+<div class="relative transition duration-500 card-outer">
+  <a
+    class="card {data.scope === 'experiment' ? 'border-dashed' : ''}}"
+    href={`/project/${slug}`}
+  >
     {#if data.scope === "project"}
       <div class="bg-white text-black title font-sans">
         <span>{data.title}</span>
