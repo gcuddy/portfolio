@@ -31,19 +31,21 @@ const { Content } = await entry.render();
           <div class="flex flex-col">
             <span class="inline-flex items-center gap-4">
               <h1
-                class="font-display text-3xl md:text-4xl lg:text-5xl font-bold"
+                class={`${
+                  entry.data.scope === "project" ? "font-display" : "font-sans"
+                } text-3xl md:text-4xl lg:text-5xl font-bold`}
               >
                 {entry.data.title}
               </h1>
               {
                 entry.data.scope === "experiment" && (
-                  <div class="bg-rose-500 p-1 rounded-full text-sm uppercase text-white px-2 font-medium">
+                  <div class="bg-rose-500 p-1 rounded-full text-sm uppercase font-mono text-white px-2 font-medium">
                     EXPERIMENT
                   </div>
                 )
               }
             </span>
-            <p class="text-lg/5 opacity-75 text-balance mx-auto max-w-prose">
+            <p class="text-lg/5 opacity-75 text-balance max-w-prose">
               {entry.data.description}
             </p>
           </div>
@@ -56,9 +58,7 @@ const { Content } = await entry.render();
       <div class="relative">
         {
           entry.data.iframe ? (
-            <div>
-              <iframe class="border-0" src={entry.data.url} frameborder="0" />
-            </div>
+            <iframe style={entry.data.height ? `height:${entry.data.height}px` : undefined} class=" border-y-2 border-gray-300 w-full aspect-video bg-white" src={entry.data.url} frameborder="0" />
           ) : entry.data.image ? (
             <a href={entry.data.url}>
               <img
@@ -71,7 +71,7 @@ const { Content } = await entry.render();
           ) : null
         }
         <div
-          class="absolute bottom-4 right-4 bg-white p-2 rounded flex items-center gap-2 text-sm"
+          class="absolute bottom-4 right-4 bg-white p-2 rounded shadow border flex items-center gap-2 text-sm"
         >
           <a
             class="font-bold flex items-baseline gap-1 hover:underline text-stone-900"
@@ -128,7 +128,10 @@ const { Content } = await entry.render();
             <dd>
               {
                 entry.data.tags.map((tag) => (
-                  <a href={`/projects/all?filter&tag=${tag}`} class="text-xs inline-block bg-stone-500 text-white rounded-full px-3 py-1 font-semibold mr-2 mb-2">
+                  <a
+                    href={`/projects/all?filter&tag=${tag}`}
+                    class="text-xs inline-block bg-stone-500 text-white rounded-full px-3 py-1 font-semibold mr-2 mb-2"
+                  >
                     {tag}
                   </a>
                 ))
@@ -140,7 +143,10 @@ const { Content } = await entry.render();
             <dd>
               {
                 entry.data.technologies.map((tech) => (
-                  <a href={`/projects/all?filter&tech=${tech}`} class="text-xs inline-block bg-stone-500 text-white rounded-full px-3 py-1 font-semibold mr-2 mb-2">
+                  <a
+                    href={`/projects/all?filter&tech=${tech}`}
+                    class="text-xs inline-block bg-stone-500 text-white rounded-full px-3 py-1 font-semibold mr-2 mb-2"
+                  >
                     {tech}
                   </a>
                 ))
@@ -152,7 +158,7 @@ const { Content } = await entry.render();
 
       {
         !!entry.body && (
-          <div class="bg-stone-800 p-4 pt-8 pb-24">
+          <div class="bg-stone-800 p-4 py-8">
             <div class="prose prose-stone prose-invert prose-lg prose-headings:font-sans text-white font-system mx-auto">
               <Content />
             </div>

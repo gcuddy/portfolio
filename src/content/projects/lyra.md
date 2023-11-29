@@ -20,3 +20,4 @@ scope: project
 
 A music app with a frontend built with React, and filesystem interaction handled by Rust (via Tauri).
 
+Built at Recurse Center for Impossible Day.

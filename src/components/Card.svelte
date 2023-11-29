@@ -8,10 +8,14 @@
   export let project: $$Props["project"];
 
   $: ({ data, slug } = project);
+
+
+  // random number between -0.5 and 0.5
+  const rotation = Math.random() - 0.4;
 </script>
 
 <!-- TODO: get commits from githubs... -->
-<div class="relative transition duration-500 card-outer">
+<div style:--tw-rotate="{rotation}deg" class="relative transition duration-500 card-outer">
   <a
     class="card {data.scope === 'experiment' ? 'border-dashed' : ''}}"
     href={`/project/${slug}`}

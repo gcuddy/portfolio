@@ -25,6 +25,7 @@ export const collections = {
       dates: z.string().optional(),
       featured: z.boolean().default(false),
       pubDate: z.coerce.date(),
+      height: z.number().optional(),
       image: z.string().optional(),
       iframe: z.boolean().default(false),
       url: z.string().optional(),

@@ -14,4 +14,6 @@ technologies:
     - CSS
 github: gcuddy/gameOfLife
 scope: experiment
+iframe: true
+height: 661
 ---
