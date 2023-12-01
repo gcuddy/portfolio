@@ -1,0 +1,30 @@
+---
+import ProjectTab from "./project-tab.svelte";
+
+const tabs = [
+  {
+    name: "All",
+    url: "/projects/all",
+  },
+  {
+    name: "Projects",
+    url: "/projects",
+  },
+  {
+    name: "Experiments",
+    url: "/projects/experiments",
+  },
+];
+---
+
+<script></script>
+
+<div class="flex w-fit justify-center items-center font-sans">
+  {
+    tabs.map((tab) => (
+      <>
+        <ProjectTab {tab} active={Astro.url.pathname === tab.url}></ProjectTab>
+      </>
+    ))
+  }
+</div>

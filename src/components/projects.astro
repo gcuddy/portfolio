@@ -1,0 +1,150 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import Card from "./Card.svelte";
+import H1 from "./H1.astro";
+import Header from "./Header.astro";
+import Container from "../layouts/Container.astro";
+import ProjectTabs from "./projects/project-tabs.astro";
+import ProjectFilter from "./projects/project-filter.svelte";
+import { ListFilter } from "lucide-astro";
+
+type Project = CollectionEntry<"projects">;
+
+interface Props {
+  scope?: Project["data"]["scope"];
+}
+
+console.log({ url: Astro.url.search });
+
+const { scope } = Astro.props;
+
+const enabledTags = Astro.url.searchParams.getAll("tag");
+const enabledTechnologies = Astro.url.searchParams.getAll("tech");
+
+console.log({ enabledTags, enabledTechnologies });
+const projects = (
+  await getCollection("projects", ({ data }) => {
+    let shouldShow = true;
+    if (scope) {
+      shouldShow = data.scope === scope;
+    }
+    if (!shouldShow) {
+      return false;
+    }
+    if (enabledTags.length > 0) {
+      shouldShow = enabledTags.every((tag) => data.tags.includes(tag));
+    }
+    if (!shouldShow) {
+      return false;
+    }
+    if (enabledTechnologies.length > 0) {
+      shouldShow = enabledTechnologies.every((technology) => data.technologies.includes(technology));
+    }
+    return shouldShow;
+  })
+).sort((a, b) => {
+    // first, sort by featured, then by pubdate
+    if (a.data.featured && !b.data.featured) {
+      return -1;
+    }
+    if (!a.data.featured && b.data.featured) {
+      return 1;
+    }
+    return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+});
+
+const tags = Array.from(new Set(projects.flatMap((project) => project.data.tags)));
+const technologies = Array.from(new Set(projects.flatMap((project) => project.data.technologies)));
+---
+
+<!-- TODO: alternate grid where I do three columns, and divide up array into columns -->
+<Layout useViewTransitions={true} title="Projects">
+  <Container>
+    <Header>
+      <H1 class="font-display text-balance">Projects</H1>
+      <div class="relative w-fit sm:mx-auto">
+        <ProjectTabs />
+        <a class="absolute -right-4 top-1/2 -translate-y-1/2" href={Astro.url.searchParams.has('filter') ? Astro.url.pathname : `${Astro.url.pathname}?filter`} class={Astro.url.searchParams.has('filter') ? 'text-rose-500' : ''}>
+          <ListFilter size={16} />
+        </a>
+      </div>
+      <ProjectFilter url={Astro.url} {tags} {technologies} />
+    </Header>
+    <!-- <div class="w-fit mx-auto my-6 p-2 border bg-white text-black -rotate-0">
+      Attention: This page is a work in progress.
+    </div> -->
+
+    <ul role="list" class="flex flex-col md:grid grid-cols-12 p-0 gap-8 mt-12 items-center">
+      {
+        projects.map((project) => (
+          <li class={project.data.featured ? "col-span-6" : "col-span-4"}>
+            <Card {project} />
+          </li>
+        ))
+      }
+    </ul>
+  </Container>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 64rem;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  .astro-a {
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translatex(-50%);
+    width: 220px;
+    height: auto;
+    z-index: -1;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    margin-bottom: 2rem;
+    border: 1px solid rgba(var(--accent-light), 25%);
+    background: linear-gradient(
+      rgba(var(--accent-dark), 66%),
+      rgba(var(--accent-dark), 33%)
+    );
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  .instructions code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba(var(--accent-light), 12%);
+    color: rgb(var(--accent-light));
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent-light));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(36ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+</style>
