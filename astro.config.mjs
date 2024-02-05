@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
 
@@ -8,5 +8,8 @@ import netlify from "@astrojs/netlify/functions";
 export default defineConfig({
   output: "hybrid",
   integrations: [tailwind(), svelte()],
-  adapter: netlify()
+  adapter: netlify(),
+  redirects: {
+    // "/notes": "/writing",
+  },
 });

@@ -6,15 +6,26 @@ import Container from "../../layouts/Container.astro";
 import { dateRegex } from "../../lib/constants";
 import { makeDateStringIntoDate, formatDate } from "../../lib/utils";
 import Note from "../../components/Note.astro";
+import { ChevronLeft } from "lucide-astro";
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
-  const blogEntries = await getCollection("notes", ({ slug, id, data }) => {
-    return (dateRegex.test(slug) || !dateRegex.test(id)) && (import.meta.env.PROD ? data.draft !== true : true);
+  const blogEntries = await getCollection("lab", ({ slug, id, data }) => {
+    return (
+      (dateRegex.test(slug) || !dateRegex.test(id)) &&
+      (import.meta.env.PROD ? data.draft !== true : true)
+    );
   });
   console.log({ blogEntries });
   return blogEntries.map((entry) => ({
-    params: { slug: dateRegex.test(entry.slug) ? entry.slug.replace(dateRegex, '').slice(1) : entry.slug },
-    props: { entry, date: dateRegex.test(entry.id) ? makeDateStringIntoDate(entry.id) : null },
+    params: {
+      slug: dateRegex.test(entry.slug)
+        ? entry.slug.replace(dateRegex, "").slice(1)
+        : entry.slug,
+    },
+    props: {
+      entry,
+      date: dateRegex.test(entry.id) ? makeDateStringIntoDate(entry.id) : null,
+    },
   }));
 }
 
@@ -28,6 +39,16 @@ const { entry, date } = Astro.props;
 
 <Layout title={entry.data.title}>
   <Container>
-    <Note {entry} date={entry.data.pubDate ?? date} />
+    <div class="flex flex-col gap-8">
+      <a
+        style="view-transition-name: lab-notes;"
+        href="/notes"
+        class="bg-rose-500 flex items-center text-white w-fit px-2 py-4 rounded hover:text-rose-500 hover:bg-white font-bold font-sans"
+      >
+        <ChevronLeft class="inline-block mr-2" />
+        <span>Lab Notes</span>
+      </a>
+      <Note {entry} date={entry.data.pubDate ?? date} />
+    </div>
   </Container>
 </Layout>

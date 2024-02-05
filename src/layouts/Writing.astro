@@ -1,0 +1,19 @@
+---
+import H1 from "../components/H1.astro";
+import Header from "../components/Header.astro";
+import Window from "../components/Window.astro";
+import WritingTabs from "../components/writing-tabs.astro";
+import Container from "../layouts/Container.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Notes">
+  <Container>
+    <Header>
+      <H1 class="font-display text-balance">Writing</H1>
+      <WritingTabs />
+      <slot name="header" />
+    </Header>
+    <slot />
+  </Container>
+</Layout>

@@ -17,6 +17,16 @@ export const collections = {
       title: z.string(),
     }),
   }),
+  lab: defineCollection({
+    type: "content",
+    schema: z.object({
+      description: z.string().optional(),
+      draft: z.boolean().default(false),
+      //   date could also be in filename
+      date: z.coerce.date().optional(),
+      title: z.string(),
+    }),
+  }),
   projects: defineCollection({
     type: "content",
     schema: z.object({

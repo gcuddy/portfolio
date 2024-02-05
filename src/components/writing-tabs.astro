@@ -1,0 +1,34 @@
+---
+import ProjectTab from "./projects/project-tab.svelte";
+---
+
+<div>
+  <ProjectTab
+    tab={{
+      name: "All",
+      url: "/writing",
+    }}
+    active={Astro.url.pathname === "/writing"}
+  />
+  <span class="text-stone-400 mx-2">/</span>
+  <ProjectTab
+    tab={{
+      name: "Essays",
+      url: "/writing/essays",
+    }}
+    active={Astro.url.pathname === "/writing/essays"}
+  />
+  <span class="text-stone-400 mx-2">/</span>
+  <!-- <a href="/notes" class="text-black">Lab Notes</a> -->
+  <ProjectTab
+    class=""
+    style="view-transition-name: lab-notes;"
+    tab={{
+      name: "Lab Notes",
+      url: "/notes",
+    }}
+    active={Astro.url.pathname === "/notes"}
+  />
+  <span class="text-stone-400 mx-2">/</span>
+  <a href="https://guscuddy.substack.com" class="" target="_blank">Substack</a>
+</div>

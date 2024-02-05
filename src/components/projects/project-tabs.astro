@@ -19,11 +19,12 @@ const tabs = [
 
 <script></script>
 
-<div class="flex w-fit justify-center items-center font-sans">
+<div class="flex w-fit justify-center items-center">
   {
-    tabs.map((tab) => (
+    tabs.map((tab, index) => (
       <>
-        <ProjectTab {tab} active={Astro.url.pathname === tab.url}></ProjectTab>
+        <ProjectTab class="px-3" {tab} active={Astro.url.pathname === tab.url}></ProjectTab>
+        {index < tabs.length - 1 && <div class="text-gray-400">/</div>}
       </>
     ))
   }

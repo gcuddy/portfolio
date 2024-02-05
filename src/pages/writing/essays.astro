@@ -13,18 +13,18 @@ import WritingList from "../../components/writing-list.astro";
 import Writing from "../../layouts/Writing.astro";
 const lookup: Record<string, Date> = {};
 const everything = [
-  ...(await getCollection("lab", ({ data }) => {
+  ...(await getCollection("notes", ({ data }) => {
     return import.meta.env.PROD ? data.draft !== true : true;
   })),
 ];
 const writing = everything
   .sort((a, b) => {
-    const aDate = a.data.date
-      ? new Date(a.data.date)
+    const aDate = a.data.pubDate
+      ? new Date(a.data.pubDate)
       : makeDateStringIntoDate(a.id);
     lookup[a.id] = aDate;
-    const bDate = b.data.date
-      ? new Date(b.data.date)
+    const bDate = b.data.pubDate
+      ? new Date(b.data.pubDate)
       : makeDateStringIntoDate(b.id);
     lookup[b.id] = bDate;
 
@@ -33,22 +33,21 @@ const writing = everything
   .map((note) => {
     return {
       href: dateRegex.test(note.slug)
-        ? `/notes/${note.slug.replace(dateRegex, "").slice(1)}`
+        ? `/writing/${note.slug.replace(dateRegex, "").slice(1)}`
         : // If the filename doesn't contain a date, make our url /notes/:s;ig
           !dateRegex.test(note.id)
-          ? `/notes/${note.slug}`
+          ? `/writing/${note.slug}`
           : // Otherwise, just use the explicitly set slug
             note.slug,
       title: note.data.title,
       date: lookup[note.id] ?? new Date(),
-      viewTransitionName: `note-${note.id}`,
     };
   });
 ---
 
 <Writing>
-  <div slot="header" class="bg-white w-fit mx-auto text-black px-4 mt-4 py-2">
-    <p>Lab notes: notes on computers, programming, design, etc.</p>
+  <div slot="header" class="bg-white text-black px-4 mt-4 py-2 w-fit mx-auto">
+    <p>My "main" collection of essays cover arts, culture, and technology.</p>
   </div>
   <div>
     <WritingList {writing} />
