@@ -7,6 +7,7 @@ interface Props {
     title: string;
     date: Date;
     viewTransitionName?: string;
+    labNoteTag?: boolean;
   }>;
   //   writing: Array<CollectionEntry<"notes">> | Array<CollectionEntry<"lab">>;
 }
@@ -22,16 +23,23 @@ const { writing } = Astro.props;
           index === writing.length - 1 ? "" : "border-b"
         }`}
       >
-        <a
-          style={
-            note.viewTransitionName
-              ? `view-transition-name: ${note.viewTransitionName}`
-              : ""
-          }
-          href={note.href}
-        >
-          {note.title}
-        </a>
+        <div class="flex items-center">
+          <a
+            style={
+              note.viewTransitionName
+                ? `view-transition-name: ${note.viewTransitionName}`
+                : ""
+            }
+            href={note.href}
+          >
+            {note.title}
+          </a>
+          {note.labNoteTag && (
+            <span class="text-xs bg-stone-100 text-stone-500 rounded-full px-2 ml-2">
+              Lab Note
+            </span>
+          )}
+        </div>
         <span class="text-base text-stone-400 tabular-nums">
           {note.date.toLocaleDateString("en-US", {
             year: "numeric",

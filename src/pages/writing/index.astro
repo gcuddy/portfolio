@@ -20,28 +20,35 @@ const everything = [
 ];
 const notes = everything
   .sort((a, b) => {
-    const aDate = a.data.pubDate
-      ? new Date(a.data.pubDate)
+    const aDateField = "pubDate" in a.data ? "pubDate" : "date";
+    const aDate = (a.data as any)[aDateField]
+      ? new Date(a.data[aDateField])
       : makeDateStringIntoDate(a.id);
     lookup[a.id] = aDate;
-    const bDate = b.data.pubDate
-      ? new Date(b.data.pubDate)
-      : makeDateStringIntoDate(b.id);
+    // shh, don't tell anyone
+    const bDate =
+      b.data.pubDate ?? b.data.date
+        ? new Date(b.data.pubDate ?? b.data.date)
+        : makeDateStringIntoDate(b.id);
     lookup[b.id] = bDate;
 
     return bDate.valueOf() - aDate.valueOf();
   })
   .map((note) => {
     return {
-      href: dateRegex.test(note.slug)
-        ? `/writing/${note.slug.replace(dateRegex, "").slice(1)}`
-        : // If the filename doesn't contain a date, make our url /notes/:s;ig
-          !dateRegex.test(note.id)
-          ? `/writing/${note.slug}`
-          : // Otherwise, just use the explicitly set slug
-            note.slug,
+      href:
+        note.collection === "lab"
+          ? `/notes/${note.slug}`
+          : dateRegex.test(note.slug)
+            ? `/writing/${note.slug.replace(dateRegex, "").slice(1)}`
+            : // If the filename doesn't contain a date, make our url /notes/:s;ig
+              !dateRegex.test(note.id)
+              ? `/writing/${note.slug}`
+              : // Otherwise, just use the explicitly set slug
+                note.slug,
       title: note.data.title,
       date: lookup[note.id] ?? new Date(),
+      labNoteTag: note.collection === "lab",
     };
   });
 ---
@@ -52,7 +59,7 @@ const notes = everything
       <H1 class="font-display text-balance">Writing</H1>
       <WritingTabs />
       <div class="bg-white text-black px-4 mt-4 py-2 w-fit mx-auto">
-        <p>A collection of all my blog posts and notes in one place.</p>
+        <p>A feed of all my notes in one place.</p>
       </div>
     </Header>
     <div class="">
