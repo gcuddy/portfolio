@@ -1,6 +1,6 @@
 ---
 title: "Getting good"
-slug: /gettinggood/
+slug: gettinggood
 ---
 
 ![Grand Central](/images/kalman-grand-central.jpg)

@@ -1,6 +1,6 @@
 ---
 title: "Don't make art in terms of 'taking risks'"
-slug: /artrisk/
+slug: artrisk
 ---
 
 > "You don’t come back from seeing Beyoncé saying, ‘I was kind of bored’. She always delivers. **Theatre loves to talk about its ‘right to fail’ and I sometimes think that can be used as an excuse for lack of rigour**.”

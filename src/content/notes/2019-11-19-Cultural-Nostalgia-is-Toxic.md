@@ -1,6 +1,6 @@
 ---
 title: Cultural Nostalgia is Toxic
-slug: /nostalgia/
+slug: nostalgia
 ---
 
 It seems that our culture, in all different forms and paths, is obsessed with nostalgia.

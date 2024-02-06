@@ -1,7 +1,7 @@
 ---
 title: Theatre is a medium of metaphor, film is a medium of relation
 description: Understanding and approaching the differences between theatre and film.
-slug: /theatreandfilm/
+slug: theatreandfilm
 ---
 
 Literalism is the great enemy of theatre. If I wanted to see something literal, I would go watch a period movie.

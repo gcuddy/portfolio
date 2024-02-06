@@ -1,6 +1,6 @@
 ---
 title: "All those wasted days add up to something"
-slug: /wasted/
+slug: wasted
 tags: ['Thoughts']
 ---
 

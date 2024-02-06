@@ -2,7 +2,7 @@
 title: How to Build the Future
 description: A vision for a sustainable theatre.
 image: /images/Alley.jpeg
-slug: /howtobuildthefuture/
+slug: howtobuildthefuture
 ---
 
 ![Alley](https://guscuddy.com/images/Alley.jpeg)

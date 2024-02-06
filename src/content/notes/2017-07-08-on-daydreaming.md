@@ -1,6 +1,6 @@
 ---
 title: "On daydreaming"
-slug: /daydreaming/
+slug: daydreaming
 tags: ['Thoughts, Creativity']
 ---
 

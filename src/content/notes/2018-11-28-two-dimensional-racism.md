@@ -1,6 +1,6 @@
 ---
 title: "Two-dimensional racism"
-slug: /2dracism/
+slug: 2dracism
 updated: 2021-03-31
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Theatre in the age of COVID-19
 description: Resources and thoughts on a fast-moving disaster.
-slug: /covid19/
+slug: covid19
 ---
 
 **These are extraordinary times. What follows is a list of resources for theatre-makers, [re-posted from my Twitter](https://twitter.com/guscuddy/status/1239692936498925568?s=21).**

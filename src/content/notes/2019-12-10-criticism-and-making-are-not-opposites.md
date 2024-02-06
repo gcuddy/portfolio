@@ -2,7 +2,7 @@
 title: Criticism and Making are not opposites. They’re the same thing.
 description: The way we critique is the way we make.
 image: /images/godard.jpeg
-slug: /criticism2/
+slug: criticism2
 ---
 
 ![Godard](/images/godard.jpeg)

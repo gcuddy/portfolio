@@ -2,7 +2,7 @@
 title: The Age of the Remix
 description: How to subvert nostalgia.
 image: /images/remix.jpeg
-slug: /remix/
+slug: remix
 ---
 
 ![remix](/images/remix.jpeg)

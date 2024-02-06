@@ -1,6 +1,6 @@
 ---
 title: "Quantity vs Quality"
-slug: /quantityvquality/
+slug: quantityvquality
 tags: ['Creativity']
 ---
 

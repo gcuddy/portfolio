@@ -1,6 +1,6 @@
 ---
 title: "Good theatre runs smooth"
-slug: /smooththeatre/
+slug: smooththeatre
 ---
 
 I have this theory that you can pretty accurately judge if a play is going to be good from its first moments. The lights go down, maybe some music comes in, and that's the most exciting part: you have us. For a moment you think, "this play might change my life": the excitement of the play starting, another world emerging. It's stuck with me since my childhood as my absolute favorite part of the theatre. Then the lights comes up, and you realize: _Oh. No. This is not going to change my life after all._ I almost always feel let down.

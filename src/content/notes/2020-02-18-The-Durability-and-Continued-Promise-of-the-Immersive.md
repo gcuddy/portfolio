@@ -1,7 +1,7 @@
 ---
 title: The Durability and Continued Promise of the Immersive
 description: Why we're all trying to escape into another world.
-slug: /immersive/
+slug: immersive
 ---
 
 I’ve noticed a trend recently.

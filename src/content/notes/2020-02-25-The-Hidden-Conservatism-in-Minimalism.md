@@ -1,7 +1,7 @@
 ---
 title: The Hidden Conservatism in Minimalism
 description: What exactly are we hiding?
-slug: /conservatism-in-minimalism/
+slug: conservatism-in-minimalism
 ---
 
 ![](/images/glass-house.jpg)

@@ -1,6 +1,6 @@
 ---
 title: "23"
-slug: /23/
+slug: '23'
 tags: ['Thoughts']
 ---
 

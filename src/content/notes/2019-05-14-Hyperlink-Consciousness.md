@@ -1,6 +1,6 @@
 ---
 title: Hyperlink Consciousness
-slug: /hyperlink/
+slug: hyperlink
 ---
 
 Mediums are the message. They contain within them a shift that forms a new consciousness.

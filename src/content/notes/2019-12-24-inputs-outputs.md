@@ -2,7 +2,7 @@
 title: Inputs and Outputs
 description: How creative output is tied directly to inputs
 image: /images/bookstore.jpeg
-slug: /inputoutput/
+slug: inputoutput
 ---
 
 ![bookstore](/images/bookstore.jpeg)

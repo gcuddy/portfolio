@@ -2,7 +2,7 @@
 title: In 2019, We Wore Masks To Hide Our Trauma
 description: Examining pop culture’s trend of looking at the wounds underneath.
 image: /images/Watchmen.jpg
-slug: /masks/
+slug: masks
 ---
 
 ![](/images/Watchmen.jpg)

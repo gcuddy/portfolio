@@ -1,7 +1,7 @@
 ---
 title: The Long and the Short of It
 description: On the future of live art.
-slug: /longandshort/
+slug: longandshort
 tags: ["Theatre"]
 ---
 

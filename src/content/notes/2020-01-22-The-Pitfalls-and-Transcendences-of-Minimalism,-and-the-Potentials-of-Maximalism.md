@@ -1,6 +1,6 @@
 ---
 title: The Cult of Minimalism
-slug: /minimalism/
+slug: minimalism
 description: Minimalism as an artistic genre can lead to transcendence. But its rise as an aesthetic language is more troubling.
 image: /images/Airspace.jpg
 ---

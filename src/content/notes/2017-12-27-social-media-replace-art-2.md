@@ -1,6 +1,6 @@
 ---
 title: "Will social media replace art, part 2"
-slug: /socialmediareplaceart2/
+slug: socialmediareplaceart2
 tags: ['Art', 'Technology']
 ---
 

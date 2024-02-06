@@ -1,6 +1,6 @@
 ---
 // get all permalinks with weird slug name
-import { getCollection, type CollectionEntry, getEntry } from "astro:content";
+import { getCollection, type CollectionEntry, getEntry, getEntries } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Container from "../layouts/Container.astro";
 import Window from "../components/Window.astro";
@@ -8,23 +8,37 @@ import { dateRegex } from "../lib/constants";
 import { makeDateStringIntoDate, formatDate } from "../lib/utils";
 import Note from "../components/Note.astro";
 // 1. Generate a new path for every collection entry
-export async function getStaticPaths() {
-  const blogEntries = await getCollection("notes", ({ slug }) => {
-    return (/^\/.*\/$/.test(slug));
-  });
-  console.log({ blogEntries });
-  return blogEntries.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry, date: dateRegex.test(entry.id) ? makeDateStringIntoDate(entry.id) : null },
-  }));
-}
 
-interface Props {
-  entry: CollectionEntry<"notes">;
-  date: Date | null;
+// export async function getStaticPaths() {
+//   const blogEntries = await getCollection("notes", ({ slug }) => {
+//     return (/^\/.*\/$/.test(slug));
+//   });
+//   console.log({ blogEntries });
+//   return blogEntries.map((entry) => ({
+//     params: { slug: entry.slug },
+//     props: { entry, date: dateRegex.test(entry.id) ? makeDateStringIntoDate(entry.id) : null },
+//   }));
+// }
+const { slug } = Astro.params;
+if (!slug) {
+  throw new Error("No slug provided");
 }
+console.log({ slug });
+const entry = await getEntry({
+  collection: "notes",
+  slug,
+});
+if (!entry) {
+  return Astro.redirect("/404");
+}
+const date = dateRegex.test(entry.id) ? makeDateStringIntoDate(entry.id) : null;
 
-const { entry, date } = Astro.props;
+// interface Props {
+//   entry: CollectionEntry<"notes">;
+//   date: Date | null;
+// }
+
+// const { entry, date } = Astro.props;
 ---
 
 <Layout title={entry.data.title}>

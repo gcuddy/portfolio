@@ -1,7 +1,7 @@
 ---
 title: "Don't be literal"
 draft: true
-slug: /blog/literal/
+slug: blog/literal
 ---
 
 In order to make good theatre, you can't be literal.

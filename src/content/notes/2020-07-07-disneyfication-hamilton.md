@@ -4,7 +4,7 @@ description: The mania is back, and there's a lot of cash behind it.
 image: https://cdn.substack.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fca465394-7e84-483a-bc31-55ba824dae2f.jp2
 curtain: 64
 tags: ["Theatre", "Streaming", 'Technology']
-slug: /hamilton/
+slug: hamilton
 
 ---
 

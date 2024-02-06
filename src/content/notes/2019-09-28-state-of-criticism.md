@@ -2,7 +2,7 @@
 title: The State of Criticism
 description: Reflecting on the state of criticism in theatre and beyond in 2019.
 excerpt: <p>Reflecting on the state of criticism in theatre and beyond in 2019.</p>
-slug: /criticism/
+slug: criticism
 categories:
   - Theatre
   - Criticism

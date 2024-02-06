@@ -1,6 +1,6 @@
 ---
 title: "The finger pointing at the moon"
-slug: /moon/
+slug: moon
 ---
 
 We have a serious problem.

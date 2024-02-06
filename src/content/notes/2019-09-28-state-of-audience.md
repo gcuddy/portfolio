@@ -3,7 +3,7 @@ title: "The State of the Audience"
 description: "Reflecting on the current state of the theatre audience in 2019."
 categories: [Theatre]
 excerpt: Reflecting on the current state of the theatre audience in 2019.
-slug: /audience/
+slug: audience
 ---
 
 ![audience](/images/2019/10/audience.jpg)

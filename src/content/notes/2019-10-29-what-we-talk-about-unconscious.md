@@ -2,7 +2,7 @@
 title: What We Talk About When We Talk About the Unconscious
 description: How to bridge the space between art and the unconscious.
 image: /images/snoopy.jpeg
-slug: /unconscious/
+slug: unconscious
 ---
 
 ![snoopy](/images/snoopy.jpeg)
