@@ -2,7 +2,9 @@
 title: The Long and the Short of It
 description: On the future of live art.
 slug: longandshort
-tags: ["Theatre"]
+tags:
+  - Theatre
+pubDate: '2020-05-12'
 ---
 
 This week, [this video](https://www.youtube.com/watch?v=eZ1b8XX0XZA) from [Guthrie Theater](https://www.guthrietheater.org/) Artistic Director Joseph Haj was shared a lot.

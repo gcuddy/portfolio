@@ -2,7 +2,10 @@
 title: “Necessary” and “Essential”
 description: What does it mean to create art when you're inessential?
 image: /images/string.jpeg
-tags: ["Creativity", "Art"]
+tags:
+  - Creativity
+  - Art
+pubDate: '2020-05-12'
 ---
 
 ![string](/images/string.jpeg)

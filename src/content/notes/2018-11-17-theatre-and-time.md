@@ -1,5 +1,6 @@
 ---
-title: "Theatre and time"
+title: Theatre and time
+pubDate: '2018-11-17'
 ---
 
 Theatre is our most potent exploder of time, because it is the only art form (and I include dance, music performance—-any sort of performance on a stage) that includes a commitment of time from both audience and performer.

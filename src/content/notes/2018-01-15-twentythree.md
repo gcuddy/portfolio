@@ -1,7 +1,9 @@
 ---
-title: "23"
+title: '23'
 slug: '23'
-tags: ['Thoughts']
+tags:
+  - Thoughts
+pubDate: '2018-01-15'
 ---
 
 Today I turn 23. Here are 23 things I’ve learned, principles to live by.

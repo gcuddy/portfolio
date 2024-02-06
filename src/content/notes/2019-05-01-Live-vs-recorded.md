@@ -1,5 +1,6 @@
 ---
-title: "Live and crafted, recorded and raw"
+title: 'Live and crafted, recorded and raw'
+pubDate: '2019-05-01'
 ---
 
 I've been thinking about podcasts and theatre a lot, and how they interrelate. I have a theory about their paradoxical relationship.

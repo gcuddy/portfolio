@@ -2,6 +2,7 @@
 title: The Durability and Continued Promise of the Immersive
 description: Why we're all trying to escape into another world.
 slug: immersive
+pubDate: '2020-02-18'
 ---
 
 I’ve noticed a trend recently.

@@ -1,16 +1,14 @@
 ---
 export const prerender = false;
+import { getCollection } from "astro:content";
 import H1 from "../../components/H1.astro";
-import ProjectTab from "../../components/projects/project-tab.svelte";
 import Header from "../../components/Header.astro";
-import Window from "../../components/Window.astro";
+import WritingList from "../../components/writing-list.astro";
+import WritingTabs from "../../components/writing-tabs.astro";
 import Container from "../../layouts/Container.astro";
 import Layout from "../../layouts/Layout.astro";
 import { dateRegex } from "../../lib/constants";
-import { getCollection } from "astro:content";
-import WritingTabs from "../../components/writing-tabs.astro";
 import { makeDateStringIntoDate } from "../../lib/utils";
-import WritingList from "../../components/writing-list.astro";
 const lookup: Record<string, Date> = {};
 const everything = [
   ...(await getCollection("notes", ({ data }) => {
@@ -20,16 +18,14 @@ const everything = [
 ];
 const notes = everything
   .sort((a, b) => {
-    const aDateField = "pubDate" in a.data ? "pubDate" : "date";
-    const aDate = (a.data as any)[aDateField]
-      ? new Date(a.data[aDateField])
+    const aDate = a.data.pubDate
+      ? a.data.pubDate
       : makeDateStringIntoDate(a.id);
     lookup[a.id] = aDate;
     // shh, don't tell anyone
-    const bDate =
-      b.data.pubDate ?? b.data.date
-        ? new Date(b.data.pubDate ?? b.data.date)
-        : makeDateStringIntoDate(b.id);
+    const bDate = b.data.pubDate
+      ? b.data.pubDate
+      : makeDateStringIntoDate(b.id);
     lookup[b.id] = bDate;
 
     return bDate.valueOf() - aDate.valueOf();

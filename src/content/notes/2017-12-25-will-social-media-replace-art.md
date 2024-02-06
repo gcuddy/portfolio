@@ -1,7 +1,10 @@
 ---
-title: "Will social media replace art?"
+title: Will social media replace art?
 slug: socialmediareplaceart
-tags: ['Art', 'Technology']
+tags:
+  - Art
+  - Technology
+pubDate: '2017-12-25'
 ---
 
 I've been spending a lot of time on social media recently. (I'm taking a break till the end of the year, but that's another story.) It's kind of new to me, but I really like posting to my Instagram story. There's something satisfying in always having a little ring around your picture that indicates you are _doing_ something.

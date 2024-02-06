@@ -1,6 +1,7 @@
 ---
-title: "Getting good"
+title: Getting good
 slug: gettinggood
+pubDate: '2018-10-30'
 ---
 
 ![Grand Central](/images/kalman-grand-central.jpg)

@@ -1,5 +1,6 @@
 ---
-title: "Saturdays"
+title: Saturdays
+pubDate: '2018-11-03'
 ---
 
 ![Saturdays](/images/IMG_2376.jpg)

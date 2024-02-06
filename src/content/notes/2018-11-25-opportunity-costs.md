@@ -1,6 +1,7 @@
 ---
-title: "Opportunity costs and attention spans"
+title: Opportunity costs and attention spans
 draft: true
+pubDate: '2018-11-25'
 ---
 
 > “Attention spans arent falling. Opportunity costs are just rising. Big, big difference. People love long, in-depth content. But it needs to be really, really good.”

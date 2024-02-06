@@ -2,6 +2,7 @@
 title: The Hidden Conservatism in Minimalism
 description: What exactly are we hiding?
 slug: conservatism-in-minimalism
+pubDate: '2020-02-25'
 ---
 
 ![](/images/glass-house.jpg)

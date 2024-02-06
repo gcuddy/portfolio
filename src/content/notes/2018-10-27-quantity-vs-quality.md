@@ -1,7 +1,9 @@
 ---
-title: "Quantity vs Quality"
+title: Quantity vs Quality
 slug: quantityvquality
-tags: ['Creativity']
+tags:
+  - Creativity
+pubDate: '2018-10-27'
 ---
 
 > I will take care of the quantity. The Great Creator will take care of the quality.

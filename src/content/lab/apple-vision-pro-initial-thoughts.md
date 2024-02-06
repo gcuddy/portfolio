@@ -1,6 +1,6 @@
 ---
 title: Crisis of Individualism (Apple Vision Pro)
-date: 2024-02-02
+pubDate: 2024-02-02
 ---
 
 Here are some initial thoughts on the [[Apple Vision Pro]], which launches today (February 2nd, 2024). I have not tried it yet — I'm just speculating.

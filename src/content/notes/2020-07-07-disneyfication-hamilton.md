@@ -1,11 +1,15 @@
 ---
-title: "The Disneyfication of Hamilton"
-description: The mania is back, and there's a lot of cash behind it.
-image: https://cdn.substack.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fca465394-7e84-483a-bc31-55ba824dae2f.jp2
+title: The Disneyfication of Hamilton
+description: 'The mania is back, and there''s a lot of cash behind it.'
+image: >-
+  https://cdn.substack.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fca465394-7e84-483a-bc31-55ba824dae2f.jp2
 curtain: 64
-tags: ["Theatre", "Streaming", 'Technology']
+tags:
+  - Theatre
+  - Streaming
+  - Technology
 slug: hamilton
-
+pubDate: '2020-07-07'
 ---
 
 *Hamilton* has finally launched on Disney+, over a year earlier than originally slated. It's been interesting to go through the release of Hamilton all over again, five years after it premiered. 2015---and the subsequent 2016 mania---seems like a world away. A show that was universally esteemed back then---[there were](https://www.currentaffairs.org/2016/07/you-should-be-terrified-that-people-who-like-hamilton-run-our-country) [dissenters](https://www.currentaffairs.org/2019/02/ishmael-reed-doesnt-like-hamilton)! but they seemed to be drowned out by Michelle Obama calling it [the greatest work of art she'd ever experienced](https://mashable.com/2016/03/14/michelle-obama-hamilton/)---has had its fair share of [reconsiderations and critical thought](https://news.harvard.edu/gazette/story/2016/10/correcting-hamilton/?fbclid=IwAR31b1xKkGZ2nvp2xGl_cRUngrmG5TLBigknNhKxV_E9_DrJKsh9FfMnPPk) over the years. The world---and culture--is in a much different place than it was.

@@ -1,7 +1,10 @@
 ---
-title: "Will social media replace art, part 2"
+title: 'Will social media replace art, part 2'
 slug: socialmediareplaceart2
-tags: ['Art', 'Technology']
+tags:
+  - Art
+  - Technology
+pubDate: '2017-12-27'
 ---
 
 One of the most compelling arguments for the [slow replacement of art with social media](http://guscuddy.com/socialmediareplaceart) is that the trends of film and theatre have tended towards naturalism in the last 50 years, arcing closer and closer to getting to _be_ real life.

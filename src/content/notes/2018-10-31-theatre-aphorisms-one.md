@@ -1,5 +1,6 @@
 ---
-title: "Theatre aphorisms, part one"
+title: 'Theatre aphorisms, part one'
+pubDate: '2018-10-31'
 ---
 
 ![line](/images/line.jpg)

@@ -1,9 +1,11 @@
 ---
-title: "The State of the Audience"
-description: "Reflecting on the current state of the theatre audience in 2019."
-categories: [Theatre]
+title: The State of the Audience
+description: Reflecting on the current state of the theatre audience in 2019.
+categories:
+  - Theatre
 excerpt: Reflecting on the current state of the theatre audience in 2019.
 slug: audience
+pubDate: '2019-09-28'
 ---
 
 ![audience](/images/2019/10/audience.jpg)

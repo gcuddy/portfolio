@@ -1,5 +1,6 @@
 ---
-title: "The theatre-church fallacy"
+title: The theatre-church fallacy
+pubDate: '2018-11-23'
 ---
 
 I hear this analogy often used, that theatre is akin to church. A place where we go to experience collective catharsis. And it's the only place, besides church, where we go to do that. Which makes it vital. Or something along those lines.

@@ -1,5 +1,6 @@
 ---
-title: "Live -> read -> write"
+title: Live -> read -> write
+pubDate: '2018-11-09'
 ---
 
 Some notes on the creative process:

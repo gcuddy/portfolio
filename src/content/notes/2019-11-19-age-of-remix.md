@@ -3,6 +3,7 @@ title: The Age of the Remix
 description: How to subvert nostalgia.
 image: /images/remix.jpeg
 slug: remix
+pubDate: '2019-11-19'
 ---
 
 ![remix](/images/remix.jpeg)

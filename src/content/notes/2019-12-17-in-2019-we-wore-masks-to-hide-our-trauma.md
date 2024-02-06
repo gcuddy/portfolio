@@ -1,8 +1,9 @@
 ---
-title: In 2019, We Wore Masks To Hide Our Trauma
+title: 'In 2019, We Wore Masks To Hide Our Trauma'
 description: Examining pop culture’s trend of looking at the wounds underneath.
 image: /images/Watchmen.jpg
 slug: masks
+pubDate: '2019-12-17'
 ---
 
 ![](/images/Watchmen.jpg)

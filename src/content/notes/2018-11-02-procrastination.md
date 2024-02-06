@@ -1,5 +1,6 @@
 ---
-title: "Procrastination"
+title: Procrastination
+pubDate: '2018-11-02'
 ---
 
 Procrastination gets a bad rap.

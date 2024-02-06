@@ -1,5 +1,6 @@
 ---
-title: "On textual fidelity"
+title: On textual fidelity
+pubDate: '2018-11-14'
 ---
 
 ![Peacham](/images/peacham.jpg)

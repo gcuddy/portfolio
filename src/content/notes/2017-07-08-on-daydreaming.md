@@ -1,7 +1,9 @@
 ---
-title: "On daydreaming"
+title: On daydreaming
 slug: daydreaming
-tags: ['Thoughts, Creativity']
+tags:
+  - 'Thoughts, Creativity'
+pubDate: '2017-07-08'
 ---
 
 _“Idle dreaming is often the essence of what we do.” - Thomas Pynchon_

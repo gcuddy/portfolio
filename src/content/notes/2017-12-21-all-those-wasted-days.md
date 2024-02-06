@@ -1,7 +1,9 @@
 ---
-title: "All those wasted days add up to something"
+title: All those wasted days add up to something
 slug: wasted
-tags: ['Thoughts']
+tags:
+  - Thoughts
+pubDate: '2017-12-21'
 ---
 
 When we grow up, it seems like we have a lot of wasted days.

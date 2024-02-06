@@ -1,8 +1,12 @@
 ---
 title: The Changing Tides of American and European Theatre
-description: Why American new plays are underrated, and New York's attitudes towards Ivo Van Hove have shifted.
-image: https://cdn.substack.com/image/fetch/w_2912,c_limit,f_auto,q_auto:good/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F0c1838a4-3499-4514-b704-dcfe107bfdc6_2400x1568.jpeg
+description: >-
+  Why American new plays are underrated, and New York's attitudes towards Ivo
+  Van Hove have shifted.
+image: >-
+  https://cdn.substack.com/image/fetch/w_2912,c_limit,f_auto,q_auto:good/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F0c1838a4-3499-4514-b704-dcfe107bfdc6_2400x1568.jpeg
 slug: europeanvamerican
+pubDate: '2020-02-11'
 ---
 
 ![](https://cdn.substack.com/image/fetch/w_2912,c_limit,f_auto,q_auto:good/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F0c1838a4-3499-4514-b704-dcfe107bfdc6_2400x1568.jpeg)

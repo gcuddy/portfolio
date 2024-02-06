@@ -3,6 +3,7 @@ title: Inputs and Outputs
 description: How creative output is tied directly to inputs
 image: /images/bookstore.jpeg
 slug: inputoutput
+pubDate: '2019-12-24'
 ---
 
 ![bookstore](/images/bookstore.jpeg)

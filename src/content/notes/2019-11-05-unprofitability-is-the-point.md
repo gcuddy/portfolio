@@ -2,6 +2,7 @@
 title: The Unprofitability is the Point
 description: On unprofitable arts and profitable technology
 slug: unprofitability
+pubDate: '2019-11-05'
 ---
 
 In a [recent interview](http://www.theguardian.com/stage/2019/oct/24/playwright-annie-baker-the-antipodes-national-theatre) with The Guardian, playwright Annie Baker said something that stuck with me: *"I like theatre because it's so unprofitable."*

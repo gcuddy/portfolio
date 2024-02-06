@@ -1,5 +1,6 @@
 ---
-title: "Theatre and scarcity"
+title: Theatre and scarcity
+pubDate: '2018-11-13'
 ---
 
 These are some thoughts on theatre and scarcity I wrote a while back. I'm posting them again because I think they're interesting.

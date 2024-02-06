@@ -1,5 +1,7 @@
 // 1. Import utilities from `astro:content`
+import { rssSchema } from "@astrojs/rss";
 import { defineCollection, z } from "astro:content";
+
 // 2. Define your collection(s)
 const blogCollection = defineCollection({
   /* ... */
@@ -9,22 +11,15 @@ const blogCollection = defineCollection({
 export const collections = {
   notes: defineCollection({
     type: "content",
-    schema: z.object({
-      description: z.string().optional(),
+    schema: rssSchema.extend({
       draft: z.boolean().default(false),
-      //   date could also be in filename
-      pubDate: z.coerce.date().optional(),
       title: z.string(),
     }),
   }),
   lab: defineCollection({
     type: "content",
-    schema: z.object({
-      description: z.string().optional(),
+    schema: rssSchema.extend({
       draft: z.boolean().default(false),
-      //   date could also be in filename
-      date: z.coerce.date().optional(),
-      title: z.string(),
     }),
   }),
   projects: defineCollection({

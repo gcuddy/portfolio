@@ -3,6 +3,7 @@ title: How to Build the Future
 description: A vision for a sustainable theatre.
 image: /images/Alley.jpeg
 slug: howtobuildthefuture
+pubDate: '2020-04-21'
 ---
 
 ![Alley](https://guscuddy.com/images/Alley.jpeg)

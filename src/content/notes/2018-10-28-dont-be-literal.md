@@ -1,7 +1,8 @@
 ---
-title: "Don't be literal"
+title: Don't be literal
 draft: true
 slug: blog/literal
+pubDate: '2018-10-28'
 ---
 
 In order to make good theatre, you can't be literal.

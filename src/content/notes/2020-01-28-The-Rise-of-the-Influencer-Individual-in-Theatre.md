@@ -3,6 +3,7 @@ title: The Rise of the Influencer Individual in Theatre
 description: The future of theatre rests in the individual.
 image: /images/Medea.jpg
 slug: influencer
+pubDate: '2020-01-28'
 ---
 
 ![](/images/Medea.jpg)

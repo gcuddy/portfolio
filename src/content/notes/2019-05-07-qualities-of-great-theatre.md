@@ -1,5 +1,6 @@
 ---
-title: "The qualities of good theatre"
+title: The qualities of good theatre
+pubDate: '2019-05-07'
 ---
 
 These days, it seems like you often hear about theatre's inevitable demise at the hands of the internet, that it's merely a luxury.

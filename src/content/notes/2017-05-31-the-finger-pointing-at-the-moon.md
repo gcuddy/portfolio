@@ -1,6 +1,7 @@
 ---
-title: "The finger pointing at the moon"
+title: The finger pointing at the moon
 slug: moon
+pubDate: '2017-05-31'
 ---
 
 We have a serious problem.

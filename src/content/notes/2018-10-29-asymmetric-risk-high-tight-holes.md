@@ -1,5 +1,6 @@
 ---
-title: "Asymmetric Risk and High Small Hoops in Theatre"
+title: Asymmetric Risk and High Small Hoops in Theatre
+pubDate: '2018-10-29'
 ---
 
 I listened to a great interview with [Nick Kokonas on The Tim Ferriss show](https://tim.blog/2018/10/18/nick-kokonas/) the other day. Nick is the co-founder of [Alinea](https://alinearestaurant.com), one of the best restaurants in America.

@@ -1,8 +1,11 @@
 ---
 title: The Cult of Minimalism
 slug: minimalism
-description: Minimalism as an artistic genre can lead to transcendence. But its rise as an aesthetic language is more troubling.
+description: >-
+  Minimalism as an artistic genre can lead to transcendence. But its rise as an
+  aesthetic language is more troubling.
 image: /images/Airspace.jpg
+pubDate: '2020-01-22'
 ---
 
 ![Airspace](/images/Airspace.jpg)

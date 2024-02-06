@@ -1,7 +1,12 @@
 ---
-title: "Art and the Unconscious"
-description: "Rationality can only get you so far. You can't always take the logical position. Sometimes you have to lay down the burden of consciousness."
-categories: [Art, Consciousness]
+title: Art and the Unconscious
+description: >-
+  Rationality can only get you so far. You can't always take the logical
+  position. Sometimes you have to lay down the burden of consciousness.
+categories:
+  - Art
+  - Consciousness
+pubDate: '2019-06-25'
 ---
 
 ![foggy forest](/images/posts/foggy-forest.jpg)

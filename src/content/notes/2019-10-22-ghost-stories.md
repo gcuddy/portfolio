@@ -1,10 +1,14 @@
 ---
 title: Ghost Stories
-description: In an age where getting ghosted is a part of daily life and language, I am fascinated by how ghosts appear in different forms in our lives and in our art.
+description: >-
+  In an age where getting ghosted is a part of daily life and language, I am
+  fascinated by how ghosts appear in different forms in our lives and in our
+  art.
 categories:
   - Theatre
   - Criticism
   - Culture
+pubDate: '2019-10-22'
 ---
 
 The history of theatre is littered with ghosts and spirits. From Hamlet to ghost lights to Ancient Greeks to contemporary plays, theatre has always explored the nature of here and there, life and death, reality and unreality. They are one of the most used and accessible tropes there is.

@@ -1,6 +1,7 @@
 ---
-title: "Simplicity and complexity"
+title: Simplicity and complexity
 draft: true
+pubDate: '2018-11-29'
 ---
 
 [Beware simple stories.][1] It's easier and easier to [fall into them these days][2].

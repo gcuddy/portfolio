@@ -6,6 +6,7 @@ slug: criticism
 categories:
   - Theatre
   - Criticism
+pubDate: '2019-09-28'
 ---
 
 ![network](/images/2019/10/network.jpg)

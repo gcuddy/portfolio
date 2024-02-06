@@ -1,5 +1,6 @@
 ---
-title: "Theatre should be theatre, not television"
+title: 'Theatre should be theatre, not television'
+pubDate: '2018-11-05'
 ---
 
 It's no secret that, for the most part, television is way, way better than theatre.

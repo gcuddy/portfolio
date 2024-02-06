@@ -1,5 +1,6 @@
 ---
-title: "Content vs accessibility"
+title: Content vs accessibility
+pubDate: '2018-11-18'
 ---
 
 This is another thing I wrote a while back. It has some good thoughts:

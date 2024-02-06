@@ -1,5 +1,5 @@
 ---
-date: 2024-02-03
+pubDate: 2024-02-03
 tags:
   - note
   - journal

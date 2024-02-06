@@ -1,7 +1,8 @@
 ---
-title: The Sound, the Silence, the Invisible
+title: 'The Sound, the Silence, the Invisible'
 description: Life is terribly noisy. Can we do anything about it?
 slug: soundsilenceinvisible
+pubDate: '2020-02-05'
 ---
 
 Silence is becoming more and more scarce.

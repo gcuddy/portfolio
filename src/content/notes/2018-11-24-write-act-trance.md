@@ -1,5 +1,6 @@
 ---
 title: Write and act in a trance
+pubDate: '2018-11-24'
 ---
 
 This comes from [Mike Birbiglia's podcast episode on Tim Ferriss' show](https://tim.blog/2016/07/27/mike-birbiglia/) a while back. I was reviewing some notes on that episode, to see how Birbiglia uses journaling.

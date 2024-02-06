@@ -1,7 +1,10 @@
 ---
 title: The Entanglement
-description: In which I try to explore the ways in which we are entangled with history, legacies and traumas.
+description: >-
+  In which I try to explore the ways in which we are entangled with history,
+  legacies and traumas.
 slug: entanglement
+pubDate: '2020-01-14'
 ---
 
 We live in webs of entanglements. Amidst history, society and pop culture, these entanglements live with us, whether we notice them or not.

@@ -10,6 +10,8 @@ const permalinks = getPermalinks("./src/content/obsidian");
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://guscuddy.com",
+
   output: "server",
   integrations: [tailwind(), svelte()],
   adapter: netlify(),

@@ -1,5 +1,6 @@
 ---
-title: "The audience matters"
+title: The audience matters
+pubDate: '2018-11-11'
 ---
 
 I've noticed that there is a certain trend for some directors to "not care" about the audience. I understand where the impulse comes from, but I think this is a big mistake.

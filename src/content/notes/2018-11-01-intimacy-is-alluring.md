@@ -1,5 +1,6 @@
 ---
-title: "The allure of intimacy in theatre and podcasts"
+title: The allure of intimacy in theatre and podcasts
+pubDate: '2018-11-01'
 ---
 
 One of theatre's great traits is its intimacy. We're in a room with people - mostly strangers - sharing in an experience that will only be experienced in that room, in that moment. It can't be replicated by any other form, right?
