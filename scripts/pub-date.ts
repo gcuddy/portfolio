@@ -3,8 +3,6 @@ import * as fs from "node:fs/promises";
 
 const files = await fs.readdir("./src/content/notes");
 
-console.log({ files });
-
 const DATE_REGEX = /\d{4}-\d{2}-\d{2}/;
 for (const file of files) {
   const content = await Bun.file(`./src/content/notes/${file}`).text();

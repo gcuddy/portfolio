@@ -29,6 +29,12 @@ const { title, useViewTransitions } = Astro.props;
     <!-- import inter -->
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link
+      rel="alternate"
+      title="Gus Cuddy RSS Feed"
+      href="/rss.xml"
+      type="application/rss+xml"
+    />
 
     <title>Gus Cuddy{title && ` — ${title}`}</title>
     <ViewTransitions />
