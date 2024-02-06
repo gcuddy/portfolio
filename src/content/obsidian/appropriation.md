@@ -2,6 +2,7 @@
 id: v8pngzadw7
 title: appropriation
 originalFileName: appropriation.md
+
 ---
 
 #index
