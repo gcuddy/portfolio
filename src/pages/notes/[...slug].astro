@@ -22,6 +22,7 @@ if (slug === undefined) {
 
 const entry =
   (await getEntry("lab", slug)) ?? (await getEntry("obsidian", slug));
+console.log({ entry, slug });
 if (!entry) {
   return Astro.redirect("/404");
 }
