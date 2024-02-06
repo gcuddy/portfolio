@@ -1,5 +1,5 @@
 ---
-title: Apple Vision Pro
+title: Crisis of Individualism (Apple Vision Pro)
 date: 2024-02-02
 ---
 

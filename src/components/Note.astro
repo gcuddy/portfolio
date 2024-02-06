@@ -20,7 +20,8 @@ const { Content } = await entry.render();
   titleViewTransitionName={`note-${entry.id}`}
 >
   <div
-    class="prose prose-stone prose-invert prose-lg prose-headings:font-sans font-system text-white mx-auto py-9"
+    id="note-container"
+    class="prose prose-stone prose-invert md:prose-lg prose-headings:font-sans font-system text-white mx-auto py-9"
   >
     <Content />
   </div>
