@@ -32,7 +32,7 @@ Now, there are lots of problems with the "files and folders" paradigm. Lots of p
 
 The typical web answer here is APIs, but APIs are much worse than standardized file formats: each pairwise edge needs its own impl. N^2 vs N. Pity poor Readwise's engineers; worse, if you have a different idea for a Readwise-alike, you must build all this to achieve parity. [pic.twitter.com/Bnj0pnXeey](https://twitter.com/andy_matuschak/status/1452438198668328960/photo/1)
 
-![3_1452437025064292355](Bins/Attachments/3_1452437025064292355.jpg)
+ins/Attachments/3_1452437025064292355.jpg)
 
 Anyway: I get annoyed every time I see "export" offered as a workflow solution, particularly for "critical path" knowledge work stuff, because I know that I'll have to do lots of manual schlepping of data, and inevitably, I'll end up with different versions in different places.
 

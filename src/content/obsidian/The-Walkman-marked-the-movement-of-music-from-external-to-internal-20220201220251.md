@@ -5,7 +5,6 @@ sr-ease: 200
 id: 3getk5kr8hk
 title: The Walkman marked the movement of music from external to internal 20220201220251
 originalFileName: The Walkman marked the movement of music from external to internal 20220201220251.md
-slug: /walkman
 ---
 
 The [[Sony walkman]] marked the first portable cassette player, and a massive media shift in the way we experience music. (See: McLuhan)

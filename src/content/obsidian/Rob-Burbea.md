@@ -6,7 +6,7 @@ He leaves behind an incredible wealth of talks that he gave on Dharma Seed, as w
 
 # Rob Burbea
 
-![](377E9342-1BA7-472A-B0A3-DACF0A8E8502.jpg)![](app://local/%2FUsers%2Fguscuddy%2FMainframe%2FBins%2FBear%2FRob%20Burbea%2F377E9342-1BA7-472A-B0A3-DACF0A8E8502.jpg?1588967611000?1588967611000)
+77E9342-1BA7-472A-B0A3-DACF0A8E8502.jpg)pp://local/%2FUsers%2Fguscuddy%2FMainframe%2FBins%2FBear%2FRob%20Burbea%2F377E9342-1BA7-472A-B0A3-DACF0A8E8502.jpg?1588967611000?1588967611000)
 
 My enjoyment (and the fruits) of concentration practice
 increased when I treated it more as an art than a mechanical

@@ -22,7 +22,7 @@ https://en.wikipedia.org/wiki/Sol\_LeWitt
 
 Mentioned in Matt Desl's generative art workshop for frontend masters:
 
-![](Generative%20Wall%20Exercise%20-%20Creative%20Coding%20with%20Canvas%20&%20WebGL%20🔊-20210918160526.jpg)
+enerative%20Wall%20Exercise%20-%20Creative%20Coding%20with%20Canvas%20&%20WebGL%20🔊-20210918160526.jpg)
 
 Solomon "Sol" LeWitt (September 9, 1928 – April 8, 2007) was an American artist linked to various movements, including conceptual art and minimalism.[1]
 

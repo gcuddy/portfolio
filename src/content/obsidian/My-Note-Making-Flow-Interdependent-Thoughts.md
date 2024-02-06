@@ -5,13 +5,13 @@ author:: [[Ton Zijlstra (Zylstra)]]
 name:: My Note Making Flow – Interdependent Thoughts
 url:: https://www.zylstra.org/blog/2022/04/my-note-making-flow/
 dateAccessed:: [[2022-04-08]]
-datePublished:: 
+datePublished::
 tags:: #source/clippings #to/read
-related:: 
-comment:: Interesting practice i can incorporate 
+related::
+comment:: Interesting practice i can incorporate
 
 
-[![](Bins/Media/captureprocessoutput-640x194.png)](https://www.flickr.com/photos/tonz/51926300249/)
+[ins/Media/captureprocessoutput-640x194.png)](https://www.flickr.com/photos/tonz/51926300249/)
 
 Similarly I’ve reduced friction in getting outputs into the world (my blog, client websites, book lists for instance). ==Where I don’t seek to reduce friction is in working with notes (expect perhaps for functionality like search), because there friction is the actual work==, where the thinking, rewriting, rearranging etc is happening. There is no way around friction there, because it is how I add value to my notes, how I learn and remember things.
 
@@ -27,14 +27,14 @@ Two examples:
 
 > Reason: Steps by Chinese gov against BATX’s ANT group. I see this in light of geopolitical positioning w.r.t. digital and data (compare to \[\[Data is a geopolitical factor 20180419080356\]\] and to \[\[Euproposition\]\]). Also see notes in \[\[Logic Magazine 7 China\]\]. Read for notes, not notions. Is there a usable contrast with the EU’s proposition?
 
-I currently have some 825 clippings, of which about 150 are my own old blogposts recycling my earlier writings that way. I do not intend to always process them into other more permanent notes, I ==don’t treat it as an inbox==. It is a ==repository in its own right==, that I can search for additional material. I do ==pick out clipped webpages for processing==, if that is logical from what I’m doing at some point in time.  
+I currently have some 825 clippings, of which about 150 are my own old blogposts recycling my earlier writings that way. I do not intend to always process them into other more permanent notes, I ==don’t treat it as an inbox==. It is a ==repository in its own right==, that I can search for additional material. I do ==pick out clipped webpages for processing==, if that is logical from what I’m doing at some point in time.
 ==Whenever I do process an article, it means deleting everything that I don’t think is interesting from my point of view, and summarising and paraphrasing the points I do find interesting.== At the top, where the original reason for saving an article is, I ==keep track of the status of that process==. The reworked article remains in the same folder as the other saved articles during this process. If I lift specific notes or notions from the article that can stand on their own, those will link to the original web article by url as source, and end up in one of three notes folders (one for conceptual notes, one for actionable ideas, one for more factual notes and examples) where they are woven into the wider collection by linking. Where that lifting is done I delete the original article from the clippings folder.
 [[Is it possible to have interoperability between an original website, cleaned up view, and a markdown file?]]
 
 ## Scientific Articles and PDFs via Zotero
 
-I use Zotero to keep a library of scientific articles and other PDFs (e.g. European Commission legal documentation). My motivation for saving them is stored as remark with the material in Zotero. When I save something I usually mention it in my Day logs in my notes, so that I can stumble across it again for processing.  
-I read those PDFs and highlight and comment in the PDF itself.  
+I use Zotero to keep a library of scientific articles and other PDFs (e.g. European Commission legal documentation). My motivation for saving them is stored as remark with the material in Zotero. When I save something I usually mention it in my Day logs in my notes, so that I can stumble across it again for processing.
+I read those PDFs and highlight and comment in the PDF itself.
 Until last week’s Zotero update I could easily grab those highlights and notes using a plugin and save them in markdown into my Obsidian notes vault. The update broke the plugin, so that flow is temporarily out of order. Any highlights and annotations in such a markdown file have a link to the corresponding location in the PDF in Zotero, meaning I can directly jump to the source.
 
 Then, like with web articles I summarise, paraphrase and connect to other notes in steps. Notes/notions that stand on their own, contain the links to Zotero sources. I write, link and fill those stand alone notes from within the annotations first. Once I’ve taken out all I want from an article I delete the annotations note, because all created individual notes link to their source in Zotero. Currently some 10% of learning related notes link to a source in Zotero, after two years of using Zotero.
@@ -54,14 +54,14 @@ In the book note that I created before reading I then work through the things I 
 
 ## Handwritten notes
 
-I write some reading notes by hand on my BOOX Nova 2 e-ink device, as well as hand written marginalia, but I don’t have an easy flow bringing those to my notes in Obsidian yet. They are stored as PDFs on my e-ink device, and I need to bring them manually into Zotero, from which there then is a working flow to my notes.  
+I write some reading notes by hand on my BOOX Nova 2 e-ink device, as well as hand written marginalia, but I don’t have an easy flow bringing those to my notes in Obsidian yet. They are stored as PDFs on my e-ink device, and I need to bring them manually into Zotero, from which there then is a working flow to my notes.
 This friction on the input side hinders regular use.
 
-Over the years I’ve filled many note books by hand, not just with reading notes, but also annotations of talks, conversations and any other things I jotted down. Recent notes from the past day(s) I usually go through as needed and transcribe into my digital notes. I add them to my Day Log notes, which then can be a jumping off point to create additional individual notes.  
+Over the years I’ve filled many note books by hand, not just with reading notes, but also annotations of talks, conversations and any other things I jotted down. Recent notes from the past day(s) I usually go through as needed and transcribe into my digital notes. I add them to my Day Log notes, which then can be a jumping off point to create additional individual notes.
 Older notebooks, I have in the past scanned a lot of the key material, and have more recently scanned a few note books entirely. In my digital notes I have created an index file for each scanned notebook, where next to a link to each scanned page there’s a brief description of the content, and perhaps a link to relevant other material. That makes it possible to stumble across those notes in search.
 
 ## Invitation to share
 
 This post describes how I currently make notes from things that I read or wrote. It is a transcription and adaptation of a presentation I gave on April 3rd to the Micro.blog Readers Republic ([video](https://www.youtube.com/watch?v=wO70o9gzqtk)), an informal group of book readers around the world meeting every month for conversation. The [question of note taking and learning came up](https://www.zylstra.org/blog/2022/01/good-micro-blog-readers-republic-meet-up-yesterday/) as ‘So you’ve read a book, and then what?’ and a few of us volunteered to show what we do. I’m always interested in how other people organise their work, and I think that requires I also share how I work.
-- [ ] 
+- [ ]
 Essentially, this description of how I digest my reading is an invitation to you to write up your modes of working too.

@@ -8,7 +8,7 @@ retweets: 20
 replies: 11
 ---
 
-#source/tweet 
+#source/tweet
 
 Jason Yuan ([@jasonyuandesign](https://twitter.com/jasonyuandesign)) - July 8, 2020 1:23 AM
 
@@ -70,7 +70,7 @@ Jason Yuan ([@jasonyuandesign](https://twitter.com/jasonyuandesign)) - July 8, 2
 
 here's a (processed) photograph of a model of the first set I designed, for a production of Shakespeare's "The Tempest" set in Japan. Initially it was a whole ass island with several "places" to mirror the literal events in the script, but my mentor encouraged me to abstract*999 [pic.twitter.com/6GWG9I5NCf](https://twitter.com/jasonyuandesign/status/1280739747355213824/photo/1)
 
-![3_1280739269447843840](Bins/Attachments/3_1280739269447843840.jpg)
+ins/Attachments/3_1280739269447843840.jpg)
 
 [Tweet link](https://twitter.com/jasonyuandesign/status/1280739747355213824)
 
