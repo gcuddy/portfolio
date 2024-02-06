@@ -18,9 +18,13 @@ export const collections = {
   }),
   lab: defineCollection({
     type: "content",
-    schema: rssSchema.extend({
-      draft: z.boolean().default(false),
-    }),
+    schema: rssSchema
+      .extend({
+        draft: z.boolean().default(false),
+      })
+      .required({
+        pubDate: true,
+      }),
   }),
   projects: defineCollection({
     type: "content",

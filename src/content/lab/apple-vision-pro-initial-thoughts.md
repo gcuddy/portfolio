@@ -1,5 +1,5 @@
 ---
-title: Not a World, Crisis of Individualism (Apple Vision Pro)
+title: Crisis of Wordless Individualism (Apple Vision Pro)
 pubDate: 2024-02-02
 ---
 
