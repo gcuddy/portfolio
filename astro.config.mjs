@@ -10,7 +10,7 @@ const permalinks = getPermalinks("./src/content/obsidian");
 
 // https://astro.build/config
 export default defineConfig({
-  output: "hybrid",
+  output: "server",
   integrations: [tailwind(), svelte()],
   adapter: netlify(),
   markdown: {
