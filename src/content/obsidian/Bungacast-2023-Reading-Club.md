@@ -1,0 +1,3 @@
+- Freedom: This Life
+- Legtimacy: Habermas 
+- Globalization: Adam Smith in Beijing

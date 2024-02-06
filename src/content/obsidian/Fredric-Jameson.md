@@ -1,0 +1,17 @@
+> **Fredric Jameson** (born April 14, 1934) is an American literary critic, philosopher and Marxist political theorist. He is best known for his analysis of contemporary cultural trends, particularly his analysis of postmodernity and capitalism. Jameson's best-known books include Postmodernism, or, The Cultural Logic of Late Capitalism (1991) and The Political Unconscious (1981).
+>
+> Jameson is currently Knut Schmidt-Nielsen Professor of Comparative Literature and Romance Studies (French) and the director of the Center for Critical Theory at Duke University.  In 2012, the Modern Language Association gave Jameson its sixth Award for Lifetime Scholarly Achievement.
+>
+> [Wikipedia](https://en.wikipedia.org/wiki/Fredric%20Jameson)
+
+#person/p #person/philosopher
+
+interests:: [[marxism]]
+influenced:: [[Kim Stanley Robinson]], [[Slavoj Zizek]], [[Mark Fisher]]
+influenced by:: [[Karl Marx]]
+
+https://www.versobooks.com/lists/5217-fredric-jameson-bookshelf
+
+Works:
+
+- Postmodernism

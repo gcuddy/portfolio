@@ -1,0 +1,2 @@
+up:: [[§ Leftism]], [[Socialism]]
+#stub

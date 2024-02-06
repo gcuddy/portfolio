@@ -15,8 +15,16 @@ export async function getStaticPaths() {
       (import.meta.env.PROD ? data.draft !== true : true)
     );
   });
-  console.log({ blogEntries });
-  return blogEntries.map((entry) => ({
+  const noteEntries = await getCollection("obsidian");
+  const notes = noteEntries.map((entry) => ({
+    params: {
+      slug: entry.slug,
+    },
+    props: {
+      entry,
+    },
+  }));
+  return [...blogEntries, ...noteEntries].map((entry) => ({
     params: {
       slug: dateRegex.test(entry.slug)
         ? entry.slug.replace(dateRegex, "").slice(1)
