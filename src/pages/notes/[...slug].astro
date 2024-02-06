@@ -1,13 +1,19 @@
 ---
 // get all permalinks with weird slug name
 export const prerender = false;
-import { getCollection, type CollectionEntry, getEntry } from "astro:content";
+import {
+  getCollection,
+  type CollectionEntry,
+  getEntry,
+  getEntries,
+} from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Container from "../../layouts/Container.astro";
 import { dateRegex } from "../../lib/constants";
 import { makeDateStringIntoDate, formatDate } from "../../lib/utils";
 import Note from "../../components/Note.astro";
 import { ChevronLeft } from "lucide-astro";
+import type { Code } from "astro:components";
 const { slug } = Astro.params;
 
 if (slug === undefined) {
@@ -23,6 +29,30 @@ const date =
   dateRegex.test(entry.id) && entry.collection === "lab"
     ? makeDateStringIntoDate(entry.id)
     : null;
+
+const stacked = Astro.url.searchParams.get("stacked")?.split(",") ?? [];
+console.log({ stacked });
+
+const stackedInfo = stacked.map((slug) => {
+  const collection = slug.startsWith("l:") ? "lab" : "obsidian";
+  slug = slug.replace("l:", "");
+  console.log({ collection, slug });
+
+  return {
+    collection,
+    slug: slug.replace("l:", "") as CollectionEntry<"lab" | "obsidian">["slug"],
+  };
+});
+
+const stackedEntries = [
+  // @ts-expect-error
+  ...(await getEntries(stacked.map((slug) => ({ collection: "lab", slug })))),
+  ...(await getEntries(
+    // @ts-expect-error
+    stacked.map((slug) => ({ collection: "obsidian", slug })),
+  )),
+].filter(Boolean);
+console.log({ stackedEntries });
 
 // export async function getStaticPaths() {
 //   const blogEntries = await getCollection("lab");
@@ -71,10 +101,20 @@ const title = entry.data.title ?? entry.id.split(".")[0].replace(/-/g, " ");
     const note = document.getElementById("note-container");
     console.log({ note });
     note?.addEventListener("click", (e) => {
-      if (e.target instanceof HTMLAnchorElement) {
+      console.log(e);
+      if (
+        e.target instanceof HTMLElement
+        // &&
+        // (e.target.dataset.breadcrumb || e.target.closest(".note-content"))
+      ) {
+        const a = e.target.closest("a");
+        if (!a) return;
+        if (a.hasAttribute("data-back")) {
+          return;
+        }
         console.log("clicked");
         console.log({ e });
-        const href = e.target.getAttribute("href");
+        const href = a.getAttribute("href");
         const currentPath = window.location.pathname;
         const currentUrl = new URL(window.location.href);
         console.log({ href, currentPath });
@@ -82,22 +122,31 @@ const title = entry.data.title ?? entry.id.split(".")[0].replace(/-/g, " ");
           return;
 
         const currentSlug = currentPath.split("/").pop();
+        const collection = note.dataset.type as "lab" | "obsidian";
 
-        const stacked =
-          currentUrl.searchParams.get("stacked")?.split(",") ?? [];
+        let stacked = currentUrl.searchParams.get("stacked")?.split(",") ?? [];
 
         const nextSlug = href?.split("/").pop();
 
         if (!nextSlug) return;
         if (!currentSlug) return;
 
-        if (stacked.includes(nextSlug)) {
-          const index = stacked.indexOf(nextSlug);
-          stacked.splice(stacked.indexOf(nextSlug), stacked.length - index);
+        const modifiedNextSlug =
+          collection === "lab" ? "l:" + nextSlug : nextSlug;
+
+        console.log({ modifiedNextSlug });
+        if (stacked.includes(modifiedNextSlug)) {
+          const index = stacked.indexOf(modifiedNextSlug);
+          stacked = stacked.slice(0, index);
+          //   stacked.splice(stacked.indexOf(nextSlug), stacked.length - index);
         }
 
-        if (!stacked.includes(currentSlug)) {
-          stacked.unshift(currentSlug);
+        if (
+          !stacked.includes(currentSlug) &&
+          !a.hasAttribute("data-breadcrumb")
+        ) {
+          console.log({ collection });
+          stacked.push(currentSlug);
         }
         console.log({ stacked });
 
@@ -107,6 +156,7 @@ const title = entry.data.title ?? entry.id.split(".")[0].replace(/-/g, " ");
         e.preventDefault();
 
         console.log({ nextHref });
+        if (nextSlug === currentSlug) return;
         navigate(nextHref, { history: "push" });
       }
     });
@@ -116,15 +166,40 @@ const title = entry.data.title ?? entry.id.split(".")[0].replace(/-/g, " ");
 </script>
 <Layout title={title}>
   <Container>
-    <div class="flex flex-col gap-8">
-      <a
-        style="view-transition-name: lab-notes;"
-        href="/notes"
-        class="bg-rose-500 flex items-center text-white w-fit px-2 py-4 rounded hover:text-rose-500 hover:bg-white font-bold font-sans"
+    <div
+      class="flex flex-col gap-8"
+      id="note-container"
+      data-type={entry.collection}
+    >
+      <div
+        data-trail
+        class="flex gap-4 items-center relative w-full min-w-0 overflow-auto"
       >
-        <ChevronLeft class="inline-block mr-2" />
-        <span>Lab Notes</span>
-      </a>
+        <a
+          data-back
+          href="/notes"
+          class="bg-rose-500 flex items-center text-white w-fit px-2 py-3 rounded hover:text-rose-500 hover:bg-white font-bold font-sans font-base"
+        >
+          <ChevronLeft class="inline-block mr-2" />
+          <span>Lab Notes</span>
+        </a>
+        {
+          stackedEntries.map((entry) => (
+            // <pre>{JSON.stringify(entry, null, 2)}</pre>
+            <a
+              style={`view-transition-name: note-${entry?.id}`}
+              data-breadcrumb
+              href={`/notes/${entry?.slug}`}
+              class="hover:bg-rose-500 flex items-center hover:text-white w-fit px-2 py-4 rounded text-rose-500 bg-white font-bold font-system text-sm min-w-0 max-w-64 truncate"
+            >
+              <span class="truncate">
+                {entry?.data.title ??
+                  entry?.id?.split(".")[0].replace(/-/g, " ")}
+              </span>
+            </a>
+          ))
+        }
+      </div>
       <Note
         entry={{
           ...entry,
@@ -138,3 +213,20 @@ const title = entry.data.title ?? entry.id.split(".")[0].replace(/-/g, " ");
     </div>
   </Container>
 </Layout>
+
+<style>
+  [data-trail] > * {
+    flex: 0 0 auto;
+  }
+  [data-trail]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 1px;
+    border: 1px dashed white;
+    opacity: 0.1;
+    width: 100%;
+    z-index: -1;
+  }
+</style>

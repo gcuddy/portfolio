@@ -4,7 +4,7 @@ import Window from "./Window.astro";
 import { formatDate } from "../lib/utils";
 
 interface Props {
-  entry: CollectionEntry<"notes">;
+  entry: CollectionEntry<"notes" | "lab" | "obsidian">;
   date?: Date | null;
 }
 
@@ -13,16 +13,31 @@ const { entry, date } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Window
-  title={entry.data.title}
-  description={entry.data.description}
-  meta={date ? formatDate(date) : undefined}
-  titleViewTransitionName={`note-${entry.id}`}
+<article
+  class={`h-full font-system ${entry.collection !== "notes" ? "sm:border" : ""}`}
 >
   <div
-    id="note-container"
-    class="prose prose-stone prose-invert md:prose-lg prose-headings:font-sans font-system text-white mx-auto py-9"
+    data-type={entry.collection}
+    id="note-content"
+    class="prose prose-stone prose-invert md:prose-lg font-system text-white mx-auto py-9"
   >
+    <header class="not-prose">
+      <h1 class="text-4xl font-semibold tracking-tight">
+        {entry.data.title}
+      </h1>
+      {
+        entry.data.description && (
+          <div class="text-lg font-light">{entry.data.description}</div>
+        )
+      }
+      {
+        date && (
+          <time class="text-sm font-light" dateTime={date.toISOString()}>
+            {formatDate(date)}
+          </time>
+        )
+      }
+    </header>
     <Content />
   </div>
-</Window>
+</article>
