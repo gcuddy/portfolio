@@ -1,2 +1,0 @@
-#person/p 
-#person/writers 

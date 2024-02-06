@@ -1,4 +1,0 @@
----
-type: country
-flag: 🇩🇪
----

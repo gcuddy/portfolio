@@ -9,12 +9,7 @@ import Note from "../../components/Note.astro";
 import { ChevronLeft } from "lucide-astro";
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
-  const blogEntries = await getCollection("lab", ({ slug, id, data }) => {
-    return (
-      (dateRegex.test(slug) || !dateRegex.test(id)) &&
-      (import.meta.env.PROD ? data.draft !== true : true)
-    );
-  });
+  const blogEntries = await getCollection("lab");
   const noteEntries = await getCollection("obsidian");
   const notes = noteEntries.map((entry) => ({
     params: {
@@ -24,17 +19,22 @@ export async function getStaticPaths() {
       entry,
     },
   }));
-  return [...blogEntries, ...noteEntries].map((entry) => ({
+  const ret = [...blogEntries, ...noteEntries].map((entry) => ({
     params: {
-      slug: dateRegex.test(entry.slug)
-        ? entry.slug.replace(dateRegex, "").slice(1)
-        : entry.slug,
+      slug:
+        dateRegex.test(entry.slug) && entry.collection === "lab"
+          ? entry.slug.replace(dateRegex, "").slice(1)
+          : entry.slug,
     },
     props: {
       entry,
-      date: dateRegex.test(entry.id) ? makeDateStringIntoDate(entry.id) : null,
+      date:
+        dateRegex.test(entry.id) && entry.collection === "lab"
+          ? makeDateStringIntoDate(entry.id)
+          : null,
     },
   }));
+  return ret;
 }
 
 interface Props {
@@ -43,9 +43,12 @@ interface Props {
 }
 
 const { entry, date } = Astro.props;
+
+// this isn't ideal, but oh well
+const title = entry.data.title ?? entry.id.split(".")[0].replace(/-/g, " ");
 ---
 
-<Layout title={entry.data.title}>
+<Layout title={title}>
   <Container>
     <div class="flex flex-col gap-8">
       <a
@@ -56,7 +59,16 @@ const { entry, date } = Astro.props;
         <ChevronLeft class="inline-block mr-2" />
         <span>Lab Notes</span>
       </a>
-      <Note {entry} date={entry.data.pubDate ?? date} />
+      <Note
+        entry={{
+          ...entry,
+          data: {
+            ...entry.data,
+            title,
+          },
+        }}
+        date={entry.data.pubDate ?? date}
+      />
     </div>
   </Container>
 </Layout>
