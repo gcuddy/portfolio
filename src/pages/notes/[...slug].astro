@@ -116,6 +116,9 @@ const title = entry.data.title ?? entry.id.split(".")[0].replace(/-/g, " ");
         console.log("clicked");
         console.log({ e });
         const href = a.getAttribute("href");
+        if (!href || href.startsWith("http")) {
+          return;
+        }
         const currentPath = window.location.pathname;
         const currentUrl = new URL(window.location.href);
         console.log({ href, currentPath });
