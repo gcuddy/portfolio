@@ -13,14 +13,15 @@
 <!-- "relative px-3 text-lg cursor-pointer whitespace-nowrap transition" -->
 <a {...$$restProps} href={tab.url} class={c} class:active>
   {tab.name}
+  <slot />
 </a>
 
 <style>
-  .active {
+  /* .active {
     text-decoration: underline;
     text-decoration-style: wavy;
     text-underline-offset: 4px;
     text-decoration-thickness: 2px;
     @apply decoration-rose-500;
-  }
+  } */
 </style>

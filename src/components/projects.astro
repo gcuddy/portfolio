@@ -1,13 +1,14 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import Card from "./Card.svelte";
+import Card from "./Card.astro";
 import H1 from "./H1.astro";
 import Header from "./Header.astro";
 import Container from "../layouts/Container.astro";
 import ProjectTabs from "./projects/project-tabs.astro";
 import ProjectFilter from "./projects/project-filter.svelte";
 import { ListFilter } from "lucide-astro";
+import { Image } from "astro:assets";
 
 type Project = CollectionEntry<"projects">;
 
@@ -15,14 +16,11 @@ interface Props {
   scope?: Project["data"]["scope"];
 }
 
-console.log({ url: Astro.url.search });
-
 const { scope } = Astro.props;
 
 const enabledTags = Astro.url.searchParams.getAll("tag");
 const enabledTechnologies = Astro.url.searchParams.getAll("tech");
 
-console.log({ enabledTags, enabledTechnologies });
 const projects = (
   await getCollection("projects", ({ data }) => {
     let shouldShow = true;
@@ -39,23 +37,29 @@ const projects = (
       return false;
     }
     if (enabledTechnologies.length > 0) {
-      shouldShow = enabledTechnologies.every((technology) => data.technologies.includes(technology));
+      shouldShow = enabledTechnologies.every((technology) =>
+        data.technologies.includes(technology),
+      );
     }
     return shouldShow;
   })
 ).sort((a, b) => {
-    // first, sort by featured, then by pubdate
-    if (a.data.featured && !b.data.featured) {
-      return -1;
-    }
-    if (!a.data.featured && b.data.featured) {
-      return 1;
-    }
-    return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+  // first, sort by featured, then by pubdate
+  if (a.data.featured && !b.data.featured) {
+    return -1;
+  }
+  if (!a.data.featured && b.data.featured) {
+    return 1;
+  }
+  return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
 });
 
-const tags = Array.from(new Set(projects.flatMap((project) => project.data.tags)));
-const technologies = Array.from(new Set(projects.flatMap((project) => project.data.technologies)));
+const tags = Array.from(
+  new Set(projects.flatMap((project) => project.data.tags)),
+);
+const technologies = Array.from(
+  new Set(projects.flatMap((project) => project.data.technologies)),
+);
 ---
 
 <!-- TODO: alternate grid where I do three columns, and divide up array into columns -->
@@ -65,7 +69,13 @@ const technologies = Array.from(new Set(projects.flatMap((project) => project.da
       <H1 class="font-display text-balance">Projects</H1>
       <div class="relative w-fit sm:mx-auto">
         <ProjectTabs />
-        <a class="absolute -right-4 top-1/2 -translate-y-1/2" href={Astro.url.searchParams.has('filter') ? Astro.url.pathname : `${Astro.url.pathname}?filter`} class={Astro.url.searchParams.has('filter') ? 'text-rose-500' : ''}>
+        <a
+          class="absolute -right-4 top-1/2 -translate-y-1/2"
+          href={Astro.url.searchParams.has("filter")
+            ? Astro.url.pathname
+            : `${Astro.url.pathname}?filter`}
+          class={Astro.url.searchParams.has("filter") ? "text-rose-500" : ""}
+        >
           <ListFilter size={16} />
         </a>
       </div>
@@ -75,11 +85,20 @@ const technologies = Array.from(new Set(projects.flatMap((project) => project.da
       Attention: This page is a work in progress.
     </div> -->
 
-    <ul role="list" class="flex flex-col md:grid grid-cols-12 p-0 gap-8 mt-12 items-center">
+    <ul
+      role="list"
+      class="flex flex-col md:grid grid-cols-12 p-0 gap-8 mt-12 items-center"
+    >
       {
         projects.map((project) => (
           <li class={project.data.featured ? "col-span-6" : "col-span-4"}>
-            <Card {project} />
+            <Card {project}>
+              hello
+              {project.data.image && (
+                <Image src={project.data.image} alt={project.data.title} />
+                //   formats={["avif", "webp"]}
+              )}
+            </Card>
           </li>
         ))
       }

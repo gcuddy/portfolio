@@ -28,20 +28,24 @@ export const collections = {
   }),
   projects: defineCollection({
     type: "content",
-    schema: z.object({
-      title: z.string(),
-      description: z.string().default(""),
-      dates: z.string().optional(),
-      featured: z.boolean().default(false),
-      pubDate: z.coerce.date(),
-      height: z.number().optional(),
-      image: z.string().optional(),
-      iframe: z.boolean().default(false),
-      url: z.string().optional(),
-      github: z.string(),
-      tags: z.array(z.string()).default([]),
-      technologies: z.array(z.string()).default([]),
-      scope: z.enum(["project", "experiment", "prototype"]).default("project"),
-    }),
+    schema: ({ image }) =>
+      z.object({
+        title: z.string(),
+        description: z.string().default(""),
+        dates: z.string().optional(),
+        featured: z.boolean().default(false),
+        pubDate: z.coerce.date(),
+        height: z.number().optional(),
+        image: image().optional(),
+        video: z.string().optional(),
+        iframe: z.boolean().default(false),
+        url: z.string().optional(),
+        github: z.string().optional(),
+        tags: z.array(z.string()).default([]),
+        technologies: z.array(z.string()).default([]),
+        scope: z
+          .enum(["project", "experiment", "prototype"])
+          .default("project"),
+      }),
   }),
 };

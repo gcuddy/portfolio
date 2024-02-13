@@ -1,7 +1,7 @@
 ---
 title: Guscuddy.com
 description: My own website has long been my own little experimental warehouse.
-image: /assets/guscuddy.jpg
+image: ./assets/guscuddy.jpg
 dates: "2015 - Present"
 pubDate: 2015-01-15 00:00:00
 url: https://guscuddy.com

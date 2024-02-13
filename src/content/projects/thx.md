@@ -1,7 +1,7 @@
 ---
 title: THX
 description: Re-creating the THX opening logo sound in pure Javascript with the raw Web Audio API.
-image: /assets/met.jpg
+image: ./assets/met.jpg
 dates: "2023"
 pubDate: 2023-11-26 00:00:00
 url: https://thx-teal.vercel.app/

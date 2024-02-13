@@ -2,6 +2,7 @@
 export const prerender = true;
 import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import { Picture } from "astro:assets";
 
 interface Props {
   entry: CollectionEntry<"projects">;
@@ -33,8 +34,10 @@ const { Content } = await entry.render();
             <span class="inline-flex items-center gap-4">
               <h1
                 class={`${
-                  entry.data.scope === "project" ? "font-display" : "font-sans"
-                } text-3xl md:text-4xl lg:text-5xl font-bold`}
+                  entry.data.scope === "project"
+                    ? "font-display"
+                    : "font-sans font-bold"
+                } ${entry.data.scope === "project" ? "text-3xl md:text-4xl lg:text-5xl font-bold" : "text-2xl"}`}
               >
                 {entry.data.title}
               </h1>
@@ -59,14 +62,20 @@ const { Content } = await entry.render();
       <div class="relative">
         {
           entry.data.iframe ? (
-            <iframe style={entry.data.height ? `height:${entry.data.height}px` : undefined} class=" border-y-2 border-gray-300 w-full aspect-video bg-white" src={entry.data.url} frameborder="0" />
+            <iframe
+              style={
+                entry.data.height ? `height:${entry.data.height}px` : undefined
+              }
+              class=" border-y-2 border-gray-300 w-full aspect-video bg-white"
+              src={entry.data.url}
+              frameborder="0"
+            />
           ) : entry.data.image ? (
             <a href={entry.data.url}>
-              <img
-                loading="lazy"
-                decoding="async"
+              <Picture
                 src={entry.data.image}
                 alt={entry.data.title}
+                formats={["avif", "webp"]}
               />
             </a>
           ) : null

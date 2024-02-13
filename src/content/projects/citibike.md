@@ -1,7 +1,7 @@
 ---
 title: Citi Bike
 description: A dead simple site to find the nearest empty station.
-image: /assets/citibike.jpg
+image: ./assets/citibike.jpg
 dates: "2023"
 pubDate: 2023-08-02 00:00:00
 url: https://citibike.vercel.app

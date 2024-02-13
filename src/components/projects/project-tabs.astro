@@ -14,18 +14,35 @@ const tabs = [
     name: "Experiments",
     url: "/projects/experiments",
   },
+  //   {
+  //     name: "Prototypes",
+  //     url: "/projects/prototypes",
+
+  //   }
 ];
 ---
 
-<script></script>
-
 <div class="flex w-fit justify-center items-center">
   {
-    tabs.map((tab, index) => (
-      <>
-        <ProjectTab class="px-3" {tab} active={Astro.url.pathname === tab.url}></ProjectTab>
-        {index < tabs.length - 1 && <div class="text-gray-400">/</div>}
-      </>
-    ))
+    tabs.map((tab, index) => {
+      const active = Astro.url.pathname === tab.url;
+      return (
+        <>
+          <div class="px-3">
+            <div class="relative">
+              <ProjectTab class="" {tab} {active}></ProjectTab>
+              {active && (
+                <div
+                  transition:persist
+                  style="view-transition-name: active;"
+                  class="absolute bottom-0 left-0 h-0.5 w-full bg-rose-500 px-3"
+                />
+              )}
+            </div>
+          </div>
+          {index < tabs.length - 1 && <div class="text-gray-400">/</div>}
+        </>
+      );
+    })
   }
 </div>

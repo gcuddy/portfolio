@@ -1,7 +1,7 @@
 ---
 title: Margins
 description: A read-everything-later research app for infovores and culturevores.
-image: /assets/margins-landing.jpg
+image: ./assets/margins-landing.jpg
 dates: "2021 - Present"
 pubDate: 2023-10-22 00:00:00
 featured: true
@@ -26,30 +26,19 @@ Like all good rabbit holes, it quickly spiraled out of control. I started scratc
 
 The result is an app that I use every day, and that I hope others will find useful too.
 
-<figure>
-    <img src="/assets/margins-view.jpg" alt="Margins screenshot" />
-    <figcaption>Exploring your library with views.</figcaption>
-</figure>
+
+![Exploring your library with views](./assets/margins-view.jpg)
 
 
-<figure>
-    <img src="/assets/margins-annotations.jpg" alt="Margins screenshot" />
-    <figcaption>Annotating an article in Margins.</figcaption>
-</figure>
+![Annotating an article in Margins](./assets/margins-annotations.jpg)
 
 ## What is Margins?
 
 Margins is a read-everything-later research app for infovores and culturevores. It's a place to save and organize all the things you want to read, watch, and listen to. It's a place to take notes, make annotations, and share collections with friends. And it's also a place to discover new things, and to get recommendations from people you trust: subscriptions, newsletters, podcasts, and more.
 
-<figure>
-    <img src="/assets/margins.jpg" alt="Margins screenshot" />
-    <figcaption>Looking over a library in Margins.</figcaption>
-</figure>
+![Looking over a library in Margins](./assets/margins.jpg)
 
-<figure>
-    <img src="/assets/margins-subscriptions.jpg" alt="Margins screenshot" />
-    <figcaption>Subscriptions.</figcaption>
-</figure>
+![Margins subscriptions](./assets/margins-subscriptions.jpg)
 
 It's a place to get lost in the margins.
 
@@ -59,10 +48,9 @@ It's heavily influenced by great read-it-later apps like [Pocket](https://getpoc
 
 Margins is built with [Svelte](https://svelte.dev/) and [SvelteKit](https://kit.svelte.dev/), and uses [TailwindCSS](https://tailwindcss.com/) for styling. It's hosted on [Vercel](https://vercel.com/), and uses [Planetscale](https://planetscale.com/) MySQL for the database. I'm using [Kysely](https://kysely.dev/) as a query builder, and [Prisma](https://www.prisma.io/) for schema management and migrations. I roll authentication with the help of [Lucia](https://lucia-auth.com).
 
-<figure>
-    <img src="/assets/margins-login.jpg" alt="Margins screenshot" />
-    <figcaption>Margins login screen — calm and collected.</figcaption>
-</figure>
+
+
+![Margins login screen — calm and collected.](./assets/margins-login.jpg)
 
 
 For a while it used the great [tRPC](https://www.trpc.io/) library for API calls, but I eventually migrated to a homegrown solution that uses similar Typescript magic to generate API routes and types.
