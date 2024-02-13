@@ -41,7 +41,7 @@ export const collections = {
       github: z.string(),
       tags: z.array(z.string()).default([]),
       technologies: z.array(z.string()).default([]),
-      scope: z.enum(["project", "experiment"]).default("project"),
+      scope: z.enum(["project", "experiment", "prototype"]).default("project"),
     }),
   }),
 };
