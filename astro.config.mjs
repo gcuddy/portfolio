@@ -14,7 +14,7 @@ export default defineConfig({
   integrations: [tailwind(), svelte()],
   adapter: cloudflare({
     functionPerRoute: true,
-    mode: "directory",
+    // mode: "directory",
   }),
   markdown: {
     remarkPlugins: [
