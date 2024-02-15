@@ -14,6 +14,7 @@ import { makeDateStringIntoDate, formatDate } from "../../lib/utils";
 import Note from "../../components/Note.astro";
 import { ChevronLeft } from "lucide-astro";
 import type { Code } from "astro:components";
+import Breadcrumbs from "../../components/breadcrumbs.svelte";
 const { slug } = Astro.params;
 
 if (slug === undefined) {
@@ -45,15 +46,15 @@ const stackedInfo = stacked.map((slug) => {
   };
 });
 
-const stackedEntries = [
-  // @ts-expect-error
-  ...(await getEntries(stacked.map((slug) => ({ collection: "lab", slug })))),
-  ...(await getEntries(
-    // @ts-expect-error
-    stacked.map((slug) => ({ collection: "obsidian", slug })),
-  )),
-].filter(Boolean);
-console.log({ stackedEntries });
+// const stackedEntries = [
+//   // @ts-expect-error
+//   ...(await getEntries(stacked.map((slug) => ({ collection: "lab", slug })))),
+//   ...(await getEntries(
+//     // @ts-expect-error
+//     stacked.map((slug) => ({ collection: "obsidian", slug })),
+//   )),
+// ].filter(Boolean);
+// console.log({ stackedEntries });
 
 // export async function getStaticPaths() {
 //   const blogEntries = await getCollection("lab");
@@ -101,6 +102,7 @@ const title = entry.data.title ?? entry.id.split(".")[0].replace(/-/g, " ");
   function setup() {
     const note = document.getElementById("note-container");
     console.log({ note });
+    return;
     note?.addEventListener("click", (e) => {
       console.log(e);
       if (
@@ -187,8 +189,9 @@ const title = entry.data.title ?? entry.id.split(".")[0].replace(/-/g, " ");
           <ChevronLeft class="inline-block mr-2" />
           <span>Lab Notes</span>
         </a>
+        <Breadcrumbs client:idle transition:persist />
         {
-          stackedEntries.map((entry) => (
+          [].map((entry) => (
             // <pre>{JSON.stringify(entry, null, 2)}</pre>
             <a
               style={`view-transition-name: note-${entry?.id}`}
