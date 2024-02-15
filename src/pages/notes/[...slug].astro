@@ -15,6 +15,7 @@ import Note from "../../components/Note.astro";
 import { ChevronLeft } from "lucide-astro";
 import type { Code } from "astro:components";
 import Breadcrumbs from "../../components/breadcrumbs.svelte";
+import Trail from "../../components/Trail.svelte";
 const { slug } = Astro.params;
 
 if (slug === undefined) {
@@ -177,36 +178,17 @@ const title = entry.data.title ?? entry.id.split(".")[0].replace(/-/g, " ");
       id="note-container"
       data-type={entry.collection}
     >
-      <div
-        data-trail
-        class="flex gap-4 items-center relative w-full min-w-0 overflow-auto"
-      >
+      <Trail client:idle>
         <a
           data-back
           href="/notes"
-          class="bg-rose-500 flex items-center text-white w-fit px-2 py-3 rounded hover:text-rose-500 hover:bg-white font-bold font-sans font-base"
+          class="bg-rose-500 shrink-0 flex items-center text-white w-fit px-2 py-3 rounded hover:text-rose-500 hover:bg-white font-bold font-sans font-base"
         >
           <ChevronLeft class="inline-block mr-2" />
           <span>Lab Notes</span>
         </a>
-        <Breadcrumbs client:idle transition:persist />
-        {
-          [].map((entry) => (
-            // <pre>{JSON.stringify(entry, null, 2)}</pre>
-            <a
-              style={`view-transition-name: note-${entry?.id}`}
-              data-breadcrumb
-              href={`/notes/${entry?.slug}`}
-              class="hover:bg-rose-500 flex items-center hover:text-white w-fit px-2 py-4 rounded text-rose-500 bg-white font-bold font-system text-sm min-w-0 max-w-64 truncate"
-            >
-              <span class="truncate">
-                {entry?.data.title ??
-                  entry?.id?.split(".")[0].replace(/-/g, " ")}
-              </span>
-            </a>
-          ))
-        }
-      </div>
+        <Breadcrumbs client:only transition:persist />
+      </Trail>
       <Note
         entry={{
           ...entry,
@@ -219,21 +201,5 @@ const title = entry.data.title ?? entry.id.split(".")[0].replace(/-/g, " ");
       />
     </div>
   </Container>
-</Layout>
 
-<style>
-  [data-trail] > * {
-    flex: 0 0 auto;
-  }
-  [data-trail]::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    height: 1px;
-    border: 1px dashed white;
-    opacity: 0.1;
-    width: 100%;
-    z-index: -1;
-  }
-</style>
+</Layout>
