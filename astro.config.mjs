@@ -12,7 +12,10 @@ export default defineConfig({
   site: "https://guscuddy.com",
   output: "server",
   integrations: [tailwind(), svelte()],
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    functionPerRoute: true,
+    mode: "directory",
+  }),
   markdown: {
     remarkPlugins: [
       // [
