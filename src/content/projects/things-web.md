@@ -4,7 +4,7 @@ description: A local-first todo web app inspired by Things.app, with realtime sy
 image: ./assets/things-web.jpg
 dates: "2024"
 pubDate: 2024-01-13 00:00:00
-url: https://github.com/gcuddy/some-thing
+url: https://sk-live.pages.dev/
 featured: true
 tags:
   - Dev
@@ -16,7 +16,7 @@ technologies:
   - Partykit
   - WebSockets
   - IndexedDB
-github: gcuddy/replicache-sk
+github: gcuddy/some-thing
 scope: project
 ---
 
