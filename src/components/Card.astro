@@ -20,7 +20,7 @@ const rotation = Math.random() - 0.4;
   class="relative transition duration-500 card-outer"
 >
   <a
-    class="card {data.scope === 'experiment' ? 'border-dashed' : ''}}"
+    class="card group overflow-hidden relative {data.scope === 'experiment' ? 'border-dashed' : ''}}"
     href={`/project/${slug}`}
   >
     {
@@ -29,6 +29,9 @@ const rotation = Math.random() - 0.4;
           <div class="bg-white text-black title font-sans">
             <span>{data.title}</span>
           </div>
+          <span class="absolute w-full bottom-0 px-4 py-2 bg-white truncate text-sm text-black transition translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+            {data.description}
+          </span>
           {data.image && <Image src={data.image} alt={data.title} />}
         </>
       ) : (

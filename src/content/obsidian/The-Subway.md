@@ -1,3 +1,0 @@
----
----
-up:: [[New York City]]

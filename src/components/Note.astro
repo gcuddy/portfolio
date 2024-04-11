@@ -4,7 +4,7 @@ import Window from "./Window.astro";
 import { formatDate } from "../lib/utils";
 
 interface Props {
-  entry: CollectionEntry<"notes" | "lab" | "obsidian">;
+  entry: CollectionEntry<"notes" | "lab">;
   date?: Date | null;
 }
 
@@ -18,6 +18,8 @@ const { Content } = await entry.render();
 >
   <div
     data-type={entry.collection}
+    data-slug={entry.data.id || entry.slug}
+    data-title={entry.data.title}
     id="note-content"
     class="prose prose-stone prose-invert md:prose-lg font-system text-white mx-auto py-9"
   >

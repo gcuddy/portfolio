@@ -17,12 +17,13 @@ const { writing } = Astro.props;
   {
     writing.map((note, index) => (
       <li
-        class={`border-white/10 py-2 flex justify-between items-center ${
+        class={`border-white/10 py-2 flex justify-between items-center gap-2 flex-col sm:flex-row ${
           index === writing.length - 1 ? "" : "border-b"
         }`}
       >
         <div class="flex items-center">
           <a
+            class="max-sm:text-center"
             style={
               note.viewTransitionName
                 ? `view-transition-name: ${note.viewTransitionName}`
@@ -32,19 +33,21 @@ const { writing } = Astro.props;
           >
             {note.title}
           </a>
+        </div>
+        <div class="flex gap-2 items-center">
           {note.labNoteTag && (
-            <span class="text-xs bg-stone-100 text-stone-500 rounded-full px-2 ml-2">
+            <span class="text-xs bg-stone-100 items-center text-rose-500 font-medium inline-flex shrink-0 rounded-full px-2 ml-2 mr-2">
               Lab Note
             </span>
           )}
+          <span class="text-base text-stone-400 tabular-nums text-right shrink-0">
+            {note.date.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </span>
         </div>
-        <span class="text-base text-stone-400 tabular-nums">
-          {note.date.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </span>
       </li>
     ))
   }
