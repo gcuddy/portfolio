@@ -7,13 +7,14 @@ pubDate: 2023-11-27 00:00:00
 url: https://github.com/gcuddy/lyra
 featured: true
 tags:
-    - Dev
-    - Design
-    - Recurse Center
+  - Dev
+  - Design
+  - Recurse Center
 technologies:
-    - React
-    - Rust
-    - Tauri
+  - React
+  - Next.js
+  - Rust
+  - Tauri
 github: gcuddy/lyra
 scope: project
 ---

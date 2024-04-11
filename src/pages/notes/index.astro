@@ -1,5 +1,5 @@
 ---
-export const prerender = false;
+export const prerender = true;
 import H1 from "../../components/H1.astro";
 import ProjectTab from "../../components/projects/project-tab.svelte";
 import Header from "../../components/Header.astro";
@@ -18,6 +18,8 @@ const everything = [
     return import.meta.env.PROD ? data.draft !== true : true;
   })),
 ];
+
+
 const writing = everything
   .sort((a, b) => {
     const aDate = a.data.pubDate as Date;

@@ -1,6 +1,6 @@
 ---
 // get all permalinks with weird slug name
-export const prerender = false;
+export const prerender = true;
 import {
   getCollection,
   type CollectionEntry,
@@ -13,39 +13,38 @@ import { dateRegex } from "../../lib/constants";
 import { makeDateStringIntoDate, formatDate } from "../../lib/utils";
 import Note from "../../components/Note.astro";
 import { ChevronLeft } from "lucide-astro";
-import type { Code } from "astro:components";
 import Breadcrumbs from "../../components/breadcrumbs.svelte";
-import Trail from "../../components/Trail.svelte";
-const { slug } = Astro.params;
+import Trail from "../../components/trail.svelte";
+// const { slug } = Astro.params;
 
-if (slug === undefined) {
-  throw new Error("No slug provided");
-}
+// if (slug === undefined) {
+//   throw new Error("No slug provided");
+// }
 
-const entry =
-  (await getEntry("lab", slug)) ?? (await getEntry("obsidian", slug));
-console.log({ entry, slug });
-if (!entry) {
-  return Astro.redirect("/404");
-}
-const date =
-  dateRegex.test(entry.id) && entry.collection === "lab"
-    ? makeDateStringIntoDate(entry.id)
-    : null;
+// const entry =
+//   (await getEntry("lab", slug)) ?? (await getEntry("obsidian", slug));
+// console.log({ entry, slug });
+// if (!entry) {
+//   return Astro.redirect("/404");
+// }
+// const date =
+//   dateRegex.test(entry.id) && entry.collection === "lab"
+//     ? makeDateStringIntoDate(entry.id)
+//     : null;
 
-const stacked = Astro.url.searchParams.get("stacked")?.split(",") ?? [];
-console.log({ stacked });
+// const stacked = Astro.url.searchParams.get("stacked")?.split(",") ?? [];
+// console.log({ stacked });
 
-const stackedInfo = stacked.map((slug) => {
-  const collection = slug.startsWith("l:") ? "lab" : "obsidian";
-  slug = slug.replace("l:", "");
-  console.log({ collection, slug });
+// const stackedInfo = stacked.map((slug) => {
+//   const collection = slug.startsWith("l:") ? "lab" : "obsidian";
+//   slug = slug.replace("l:", "");
+//   console.log({ collection, slug });
 
-  return {
-    collection,
-    slug: slug.replace("l:", "") as CollectionEntry<"lab" | "obsidian">["slug"],
-  };
-});
+//   return {
+//     collection,
+//     slug: slug.replace("l:", "") as CollectionEntry<"lab" | "obsidian">["slug"],
+//   };
+// });
 
 // const stackedEntries = [
 //   // @ts-expect-error
@@ -57,41 +56,41 @@ const stackedInfo = stacked.map((slug) => {
 // ].filter(Boolean);
 // console.log({ stackedEntries });
 
-// export async function getStaticPaths() {
-//   const blogEntries = await getCollection("lab");
-//   const noteEntries = await getCollection("obsidian");
-//   const notes = noteEntries.map((entry) => ({
-//     params: {
-//       slug: entry.slug,
-//     },
-//     props: {
-//       entry,
-//     },
-//   }));
-//   const ret = [...blogEntries, ...noteEntries].map((entry) => ({
-//     params: {
-//       slug:
-//         dateRegex.test(entry.slug) && entry.collection === "lab"
-//           ? entry.slug.replace(dateRegex, "").slice(1)
-//           : entry.slug,
-//     },
-//     props: {
-//       entry,
-//       date:
-//         dateRegex.test(entry.id) && entry.collection === "lab"
-//           ? makeDateStringIntoDate(entry.id)
-//           : null,
-//     },
-//   }));
-//   return ret;
-// }
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("lab");
+  const noteEntries = await getCollection("obsidian");
+  const notes = noteEntries.map((entry) => ({
+    params: {
+      slug: entry.slug,
+    },
+    props: {
+      entry,
+    },
+  }));
+  const ret = [...blogEntries, ...noteEntries].map((entry) => ({
+    params: {
+      slug:
+        dateRegex.test(entry.slug) && entry.collection === "lab"
+          ? entry.slug.replace(dateRegex, "").slice(1)
+          : entry.slug,
+    },
+    props: {
+      entry,
+      date:
+        dateRegex.test(entry.id) && entry.collection === "lab"
+          ? makeDateStringIntoDate(entry.id)
+          : null,
+    },
+  }));
+  return ret;
+}
 
 // interface Props {
 //   entry: CollectionEntry<"notes">;
 //   date: Date | null;
 // }
 
-// const { entry, date } = Astro.props;
+const { entry, date } = Astro.props;
 
 // // this isn't ideal, but oh well
 const title = entry.data.title ?? entry.id.split(".")[0].replace(/-/g, " ");
@@ -201,5 +200,4 @@ const title = entry.data.title ?? entry.id.split(".")[0].replace(/-/g, " ");
       />
     </div>
   </Container>
-
 </Layout>

@@ -14,6 +14,10 @@ p {
   font-variation-settings: "opsz" 36;
 }
 
+* {
+  min-width: 0;
+}
+
 em {
   font-style: italic;
 

@@ -6,14 +6,15 @@ dates: "2023"
 pubDate: 2023-08-02 00:00:00
 url: https://citibike.vercel.app
 tags:
-    - Dev
-    - Geolocation
-    - NYC
-    - Hacky
+  - Dev
+  - Geolocation
+  - NYC
+  - Hacky
 technologies:
-    - Sveltekit
-    - JSON scraping
+  - Sveltekit
+  - JSON scraping
 github: gcuddy/citibike
+scope: experiment
 ---
 
 Okay, Citi Bike got rid of this [loophole](https://nyc.streetsblog.org/2023/09/19/say-good-bye-to-the-free-citi-bike-e-bike-loophole), so this site is less relevant: it finds the nearest station with no bikes available, so you can get a free ride on an e-bike (by docking it and undocking it again).
