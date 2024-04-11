@@ -1,11 +1,5 @@
 ---
-export const prerender = false;
-import { getCollection } from "astro:content";
 import Projects from "../../components/projects.astro";
-
-const projects = (await getCollection("projects")).sort((a, b) => {
-  return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
-});
 ---
 
 <Projects scope="project" />
