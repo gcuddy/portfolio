@@ -1,1 +1,0 @@
-[[§ Critiques of technology]]

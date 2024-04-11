@@ -58,16 +58,16 @@ import Trail from "../../components/trail.svelte";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("lab");
-  const noteEntries = await getCollection("obsidian");
-  const notes = noteEntries.map((entry) => ({
-    params: {
-      slug: entry.slug,
-    },
-    props: {
-      entry,
-    },
-  }));
-  const ret = [...blogEntries, ...noteEntries].map((entry) => ({
+  // const noteEntries = await getCollection("obsidian");
+  // const notes = noteEntries.map((entry) => ({
+  //   params: {
+  //     slug: entry.slug,
+  //   },
+  //   props: {
+  //     entry,
+  //   },
+  // }));
+  const ret = blogEntries.map((entry) => ({
     params: {
       slug:
         dateRegex.test(entry.slug) && entry.collection === "lab"

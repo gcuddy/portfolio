@@ -3,7 +3,8 @@ title: TSPDT Movie Explorer
 description: Exploring the greatest films of all time. Exhaustively, beautifully.
 image: ./assets/tspdt-1.jpg
 dates: "2024"
-pubDate: 2024-01-05 00:00:00
+pubDate: 2024-03-05 00:00:00
+featured: true
 tags:
   - Dev
   - Design

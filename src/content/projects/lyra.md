@@ -3,7 +3,7 @@ title: Lyra
 description: An iTunes-like cross-platform music app built for playing your offline library.
 image: ./assets/lyra-screenshot.jpg
 dates: "2023"
-pubDate: 2023-11-27 00:00:00
+pubDate: 2024-03-27 00:00:00
 url: https://github.com/gcuddy/lyra
 featured: true
 tags:

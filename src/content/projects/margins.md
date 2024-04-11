@@ -3,20 +3,20 @@ title: Margins
 description: A read-everything-later research app for infovores and culturevores.
 image: ./assets/margins-landing.jpg
 dates: "2021 - Present"
-pubDate: 2023-10-22 00:00:00
+pubDate: 2024-10-22 00:00:00
 featured: true
 url: https://margins.gg/
 tags:
-    - Dev
-    - Design
+  - Dev
+  - Design
 technologies:
-    - Svelte
-    - Sveltekit
-    - TailwindCSS
-    - Vercel
-    - MySQL
-    - Planetscale
-    - Kysely
+  - Svelte
+  - Sveltekit
+  - TailwindCSS
+  - Vercel
+  - MySQL
+  - Planetscale
+  - Kysely
 github: gcuddy/margins
 ---
 
@@ -26,9 +26,7 @@ Like all good rabbit holes, it quickly spiraled out of control. I started scratc
 
 The result is an app that I use every day, and that I hope others will find useful too.
 
-
 ![Exploring your library with views](./assets/margins-view.jpg)
-
 
 ![Annotating an article in Margins](./assets/margins-annotations.jpg)
 
@@ -48,10 +46,7 @@ It's heavily influenced by great read-it-later apps like [Pocket](https://getpoc
 
 Margins is built with [Svelte](https://svelte.dev/) and [SvelteKit](https://kit.svelte.dev/), and uses [TailwindCSS](https://tailwindcss.com/) for styling. It's hosted on [Vercel](https://vercel.com/), and uses [Planetscale](https://planetscale.com/) MySQL for the database. I'm using [Kysely](https://kysely.dev/) as a query builder, and [Prisma](https://www.prisma.io/) for schema management and migrations. I roll authentication with the help of [Lucia](https://lucia-auth.com).
 
-
-
 ![Margins login screen — calm and collected.](./assets/margins-login.jpg)
-
 
 For a while it used the great [tRPC](https://www.trpc.io/) library for API calls, but I eventually migrated to a homegrown solution that uses similar Typescript magic to generate API routes and types.
 
