@@ -6,7 +6,7 @@ import H1 from "./H1.astro";
 import Header from "./Header.astro";
 import Container from "../layouts/Container.astro";
 import ProjectTabs from "./projects/project-tabs.astro";
-import ProjectFilter from "./projects/project-filter.svelte";
+// import ProjectFilter from "./projects/project-filter.svelte";
 import { ListFilter } from "lucide-astro";
 import { Image } from "astro:assets";
 
@@ -69,17 +69,17 @@ const technologies = Array.from(
       <H1 class="font-display text-balance">Projects</H1>
       <div class="relative w-fit sm:mx-auto">
         <ProjectTabs />
-        <a
-          class="absolute -right-4 top-1/2 -translate-y-1/2"
-          href={Astro.url.searchParams.has("filter")
-            ? Astro.url.pathname
-            : `${Astro.url.pathname}?filter`}
-          class={Astro.url.searchParams.has("filter") ? "text-rose-500" : ""}
-        >
-          <ListFilter size={16} />
-        </a>
+        <!-- <a -->
+        <!--   class="absolute -right-4 top-1/2 -translate-y-1/2" -->
+        <!--   href={Astro.url.searchParams.has("filter") -->
+        <!--     ? Astro.url.pathname -->
+        <!--     : `${Astro.url.pathname}?filter`} -->
+        <!--   class={Astro.url.searchParams.has("filter") ? "text-rose-500" : ""} -->
+        <!-- > -->
+        <!--   <ListFilter size={16} /> -->
+        <!-- </a> -->
       </div>
-      <ProjectFilter url={Astro.url} {tags} {technologies} />
+      <!-- <ProjectFilter url={Astro.url} {tags} {technologies} /> -->
     </Header>
     <!-- <div class="w-fit mx-auto my-6 p-2 border bg-white text-black -rotate-0">
       Attention: This page is a work in progress.

@@ -6,11 +6,10 @@ import netlify from "@astrojs/netlify/functions";
 
 export default defineConfig({
   site: "https://guscuddy.com",
-  output: "hybrid",
+  output: "static",
   integrations: [tailwind(), svelte()],
   adapter: netlify(),
   redirects: {
     // "/notes": "/writing",
   },
 });
-
