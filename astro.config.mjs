@@ -10,12 +10,9 @@ import cloudflare from "@astrojs/cloudflare";
 // https://astro.build/config
 export default defineConfig({
   site: "https://guscuddy.com",
-  output: "hybrid",
+  output: "server",
   integrations: [tailwind(), svelte()],
-  adapter: cloudflare({
-    functionPerRoute: true,
-    // mode: "directory",
-  }),
+  adapter: cloudflare(),
   markdown: {
     remarkPlugins: [
       // [
