@@ -4,7 +4,7 @@ description: 3D Books with performant CSS Animations.
 image: ./assets/books-1.jpg
 dates: "2024"
 pubDate: 2024-03-01 00:00:00
-url: https://3d-bookshelf.pages.dev/
+url: https://3d-bookshelf.guscuddy.com/
 featured: false
 tags:
   - Dev

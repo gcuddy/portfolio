@@ -5,7 +5,7 @@ image: ./assets/tspdt-1.jpg
 dates: "2024"
 pubDate: 2024-03-05 00:00:00
 featured: true
-url: https://tspdt.pages.dev/
+url: https://tspdt.guscuddy.com/
 tags:
   - Dev
   - Design
