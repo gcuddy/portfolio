@@ -1,13 +1,11 @@
 ---
-layout: '../layouts/Home.astro'
+layout: "../layouts/Home.astro"
 ---
 
-I wear a few different hats: a writer, researcher, programmer & designer, and actor/director. I'm interested in getting free, soul-expanding film and theatre, beautiful software and tools for thought, and the potentials and perils of the future.
+I am a programmer, designer, writer, researcher, and performer. My background is in theatre and film. I enjoy crafting interfaces, thinking through software design, understanding media, and considering the possibilities of form and content. I'm interested in tools for thought, tools for creativity, and tools for liberation.
 
-Right now most of my time is spent building my read-later/research organizing app, [Margins](https://margins.gg/).
+I recently finished a batch at the Recurse Center, where I built lots of cool things, worked with lots of great people, and thought a lot about human-computer interaction. I spend a lot of time building several projects, like my read-later/research organizing app, [Margins](https://margins.gg/). But I'm also currently open to work.
 
 This is my web home. My own experimental warehouse: a place to cultivate web space and seek digital texture.
 
 I was born in Davis, CA, grew up in Rochester, NY, and currently live in Crown Heights, Brooklyn with my partner [Mari](https://marivialgolden.com). I’m of Armenian, Lebanese, Egyptian and Irish descent.
-
-[Look at my development and design project portfolio](/projects/), [see my acting work](/acting/) or [flip through recent writing](/notes/).

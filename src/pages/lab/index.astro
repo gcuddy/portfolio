@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+import H1 from "../../components/H1.astro";
+import Header from "../../components/Header.astro";
+import Container from "../../layouts/Container.astro";
+import Layout from "../../layouts/Layout.astro";
+import LabNote from "../../components/lab-note.astro";
+
+const notes = await getCollection("lab");
+---
+
+<Layout>
+  <Container>
+    <Header>
+      <H1>Lab Notes</H1>
+      <div
+        class="text-base text-balance tracking-tight font-medium text-white/75"
+      >
+        notes on creative computers, programming, & design
+      </div>
+      <div class="absolute inset-0 header-background"></div>
+    </Header>
+    <div class="flex flex-col gap-8 max-w-[45rem] mx-auto">
+      {
+        notes.map(async (note) => {
+          return <LabNote {note} />;
+        })
+      }
+    </div>
+  </Container>
+</Layout>
+
+<style>
+  .header-background {
+    background: radial-gradient(rgb(63, 41, 46) 1px, transparent 0px) -19px -19px /
+      13px 13px transparent;
+    mask-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 1) 20%,
+      rgba(153, 153, 153, 0) 100%
+    );
+    z-index: -1;
+  }
+</style>

@@ -1,0 +1,38 @@
+---
+import Window from "./Window.astro";
+
+import type { CollectionEntry } from "astro:content";
+
+type Note = CollectionEntry<"lab">;
+
+interface Props {
+  note: Note;
+}
+
+const { note } = Astro.props;
+
+const { Content } = await note.render();
+
+function formatDate(date?: Date) {
+  if (!date) return "";
+
+  return new Intl.DateTimeFormat("fr-CA", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(date);
+}
+---
+
+<Window title={note.data.title}>
+  <a
+    href=`/notes/${note.slug}`
+    slot="meta"
+    class="text-sm shrink-0 font-medium tabular-nums"
+  >
+    {formatDate(note.data.pubDate)}
+  </a>
+  <div class="sm:prose-lg prose prose-invert prose-stone">
+    <Content />
+  </div>
+</Window>

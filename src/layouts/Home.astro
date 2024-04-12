@@ -4,7 +4,15 @@ import Layout from "./Layout.astro";
 import H1 from "../components/H1.astro";
 import Window from "../components/Window.astro";
 import Header from "../components/Header.astro";
-import { User, AtSign, Mail, Info, Sparkles, Briefcase, History } from "lucide-astro";
+import {
+  User,
+  AtSign,
+  Mail,
+  Info,
+  Sparkles,
+  Briefcase,
+  History,
+} from "lucide-astro";
 
 const date = new Date();
 ---
@@ -20,41 +28,6 @@ const date = new Date();
         </H1>
       </Header>
       <div class="flex flex-col gap-4">
-        <div class="flex flex-col items-tretch md:grid gap-4 grid-cols-12">
-          <div class="col-span-6">
-            <Window title="Latest">
-              <Sparkles slot="meta" />
-              <div
-                class="prose mx-auto prose-stone prose-lg sm:prose-xl prose-invert text-white"
-              >
-                <p>
-                  Currently doing a 12-week batch at the <a
-                    href="https://www.recurse.com/">Recurse Center</a
-                  >! I'm going to be exploring my programming interests and
-                  research, and looking at crossover points between computing,
-                  art, and theatre.
-                </p>
-              </div>
-            </Window>
-          </div>
-          <div class="col-span-6">
-            <Window title="Recent & featured work">
-              <Briefcase slot="meta" />
-              <!-- TODO: pull from content collections? Better design here? -->
-              <ul class="featured-work flex flex-col h-full grow justify-between lg:gap-4">
-                <li>
-                    <a href="/project/margins" class="font-semibold">Margins</a> — a research app
-                </li>
-                <li class="lg:text-right">
-                    <a href="/project/lyra" class="font-semibold">Lyra</a> - a music player
-                </li>
-                <li>
-                    <a href="https://guscuddy.substack.com/p/the-curtain-112-what-web3-gets-wrong" class="font-semibold">What Web3 Gets Wrong About What's Wrong With Art</a> - essay
-                </li>
-              </ul>
-            </Window>
-          </div>
-        </div>
         <Window title="About">
           <User slot="meta" />
 
@@ -64,6 +37,49 @@ const date = new Date();
             <slot />
           </div>
         </Window>
+        <div class="flex flex-col items-tretch md:grid gap-4 grid-cols-12">
+          <div class="col-span-6">
+            <Window title="Latest">
+              <Sparkles slot="meta" />
+              <div
+                class="prose mx-auto prose-stone prose-lg sm:prose-xl prose-invert text-white"
+              >
+                <p>
+                  Just finished a retreat at the <a
+                    href="https://www.recurse.com/">Recurse Center</a
+                  >, where I went deep on many different programming and design
+                  interests.
+                </p>
+              </div>
+            </Window>
+          </div>
+          <div class="col-span-6">
+            <Window title="Recent & featured work">
+              <Briefcase slot="meta" />
+              <!-- TODO: pull from content collections? Better design here? -->
+              <ul
+                class="featured-work divide-y divide-white/5 flex flex-col h-full grow justify-between"
+              >
+                <li class="py-2 flex items-center gap-4">
+                  <a href="/project/margins" class="no-underline font-medium"
+                    >Margins</a
+                  >
+                  <span class="text-white/75">a research app</span>
+                </li>
+                <li class="py-2 flex items-center gap-4">
+                  <a href="/project/lyra" class="font-medium">Lyra</a>
+                  <span class="text-white/75">a music player</span>
+                </li>
+                <li class="py-2 flex items-center gap-4">
+                  <a href="/project/tspdt" class="font-medium"
+                    >TSPDT Movie Explorer</a
+                  >
+                  <span class="text-white/75">a movie explorer</span>
+                </li>
+              </ul>
+            </Window>
+          </div>
+        </div>
         <div class="flex flex-col items-stretch md:grid gap-4 grid-cols-12">
           <div class="col-span-4">
             <Window title="Contact">
@@ -114,8 +130,8 @@ const date = new Date();
                 > and <a
                   href="https://djr.com/notes/gimlet-sans-optical-sizes-font-of-the-month"
                   >Gimlet Sans</a
-                > fonts, both of which are being used on the mini licenses from
-                his Font of the Month club. It also uses the now-classic <a
+                > fonts, both of which are being used on the mini licenses from his
+                Font of the Month club. It also uses the now-classic <a
                   href="https://rsms.me/inter/">Inter</a
                 >. The site is built with <a href="https://astro.build">Astro</a
                 >, and deployed on Netlify.
@@ -126,14 +142,19 @@ const date = new Date();
             <Window title="Last Update">
               <History slot="meta" />
               <p>
-                <time class="text-base tracking-tight font-mono text-balance text-center" datetime={date.toISOString()}>
-                    {date.toLocaleDateString("en-US", {
+                <time
+                  class="text-base tracking-tight font-mono text-balance text-center"
+                  datetime={date.toISOString()}
+                >
+                  {
+                    date.toLocaleDateString("en-US", {
                       weekday: "long",
                       year: "numeric",
                       month: "long",
                       day: "numeric",
                       hour: "numeric",
-                    })}
+                    })
+                  }
                 </time>
               </p>
             </Window>
@@ -154,5 +175,4 @@ const date = new Date();
   dl.grid dd {
     @apply col-span-8;
   }
-
 </style>

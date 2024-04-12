@@ -3,70 +3,15 @@
 export const prerender = true;
 import {
   getCollection,
-  type CollectionEntry,
-  getEntry,
-  getEntries,
 } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Container from "../../layouts/Container.astro";
 import { dateRegex } from "../../lib/constants";
 import { makeDateStringIntoDate, formatDate } from "../../lib/utils";
-import Note from "../../components/Note.astro";
-import { ChevronLeft } from "lucide-astro";
-import Breadcrumbs from "../../components/breadcrumbs.svelte";
-import Trail from "../../components/trail.svelte";
-// const { slug } = Astro.params;
-
-// if (slug === undefined) {
-//   throw new Error("No slug provided");
-// }
-
-// const entry =
-//   (await getEntry("lab", slug)) ?? (await getEntry("obsidian", slug));
-// console.log({ entry, slug });
-// if (!entry) {
-//   return Astro.redirect("/404");
-// }
-// const date =
-//   dateRegex.test(entry.id) && entry.collection === "lab"
-//     ? makeDateStringIntoDate(entry.id)
-//     : null;
-
-// const stacked = Astro.url.searchParams.get("stacked")?.split(",") ?? [];
-// console.log({ stacked });
-
-// const stackedInfo = stacked.map((slug) => {
-//   const collection = slug.startsWith("l:") ? "lab" : "obsidian";
-//   slug = slug.replace("l:", "");
-//   console.log({ collection, slug });
-
-//   return {
-//     collection,
-//     slug: slug.replace("l:", "") as CollectionEntry<"lab" | "obsidian">["slug"],
-//   };
-// });
-
-// const stackedEntries = [
-//   // @ts-expect-error
-//   ...(await getEntries(stacked.map((slug) => ({ collection: "lab", slug })))),
-//   ...(await getEntries(
-//     // @ts-expect-error
-//     stacked.map((slug) => ({ collection: "obsidian", slug })),
-//   )),
-// ].filter(Boolean);
-// console.log({ stackedEntries });
+import LabNote from "../../components/lab-note.astro";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("lab");
-  // const noteEntries = await getCollection("obsidian");
-  // const notes = noteEntries.map((entry) => ({
-  //   params: {
-  //     slug: entry.slug,
-  //   },
-  //   props: {
-  //     entry,
-  //   },
-  // }));
   const ret = blogEntries.map((entry) => ({
     params: {
       slug:
@@ -85,119 +30,14 @@ export async function getStaticPaths() {
   return ret;
 }
 
-// interface Props {
-//   entry: CollectionEntry<"notes">;
-//   date: Date | null;
-// }
-
 const { entry, date } = Astro.props;
 
-// // this isn't ideal, but oh well
 const title = entry.data.title ?? entry.id.split(".")[0].replace(/-/g, " ");
 ---
-
-<script>
-  import { navigate } from "astro:transitions/client";
-
-  function setup() {
-    const note = document.getElementById("note-container");
-    console.log({ note });
-    return;
-    note?.addEventListener("click", (e) => {
-      console.log(e);
-      if (
-        e.target instanceof HTMLElement
-        // &&
-        // (e.target.dataset.breadcrumb || e.target.closest(".note-content"))
-      ) {
-        const a = e.target.closest("a");
-        if (!a) return;
-        if (a.hasAttribute("data-back")) {
-          return;
-        }
-        console.log("clicked");
-        console.log({ e });
-        const href = a.getAttribute("href");
-        if (!href || href.startsWith("http")) {
-          return;
-        }
-        const currentPath = window.location.pathname;
-        const currentUrl = new URL(window.location.href);
-        console.log({ href, currentPath });
-        if (!currentPath.startsWith("/notes") && !href?.startsWith("/notes"))
-          return;
-
-        const currentSlug = currentPath.split("/").pop();
-        const collection = note.dataset.type as "lab" | "obsidian";
-
-        let stacked = currentUrl.searchParams.get("stacked")?.split(",") ?? [];
-
-        const nextSlug = href?.split("/").pop();
-
-        if (!nextSlug) return;
-        if (!currentSlug) return;
-
-        const modifiedNextSlug =
-          collection === "lab" ? "l:" + nextSlug : nextSlug;
-
-        console.log({ modifiedNextSlug });
-        if (stacked.includes(modifiedNextSlug)) {
-          const index = stacked.indexOf(modifiedNextSlug);
-          stacked = stacked.slice(0, index);
-          //   stacked.splice(stacked.indexOf(nextSlug), stacked.length - index);
-        }
-
-        if (
-          !stacked.includes(currentSlug) &&
-          !a.hasAttribute("data-breadcrumb")
-        ) {
-          console.log({ collection });
-          stacked.push(currentSlug);
-        }
-        console.log({ stacked });
-
-        const nextHref = `/notes/${nextSlug}${
-          stacked.length > 0 ? `?stacked=${stacked.join(",")}` : ""
-        }`;
-        e.preventDefault();
-
-        console.log({ nextHref });
-        if (nextSlug === currentSlug) return;
-        navigate(nextHref, { history: "push" });
-      }
-    });
-  }
-
-  document.addEventListener("astro:page-load", setup);
-</script>
 <Layout title={title}>
   <Container>
-    <div
-      class="flex flex-col gap-8"
-      id="note-container"
-      data-type={entry.collection}
-    >
-      <Trail client:idle>
-        <a
-          data-back
-          href="/notes"
-          class="bg-rose-500 shrink-0 flex items-center text-white w-fit px-2 py-3 rounded hover:text-rose-500 hover:bg-white font-bold font-sans font-base"
-        >
-          <ChevronLeft class="inline-block mr-2" />
-          <span>Lab Notes</span>
-        </a>
-        <Breadcrumbs client:only transition:persist />
-      </Trail>
-      <Note
-        entry={{
-          ...entry,
-          data: {
-            ...entry.data,
-            title,
-          },
-        }}
-        date={entry.data.pubDate ?? date}
-      />
-    </div>
+    <div class="max-w-[45rem] mx-auto">
+    <LabNote note={entry}  />
+      </div>
   </Container>
 </Layout>

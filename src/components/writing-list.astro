@@ -1,4 +1,6 @@
 ---
+import Badge from "./badge.astro";
+
 interface Props {
   writing: Array<{
     href: string;
@@ -35,11 +37,7 @@ const { writing } = Astro.props;
           </a>
         </div>
         <div class="flex gap-2 items-center">
-          {note.labNoteTag && (
-            <span class="text-xs bg-stone-100 items-center text-rose-500 font-medium inline-flex shrink-0 rounded-full px-2 ml-2 mr-2">
-              Lab Note
-            </span>
-          )}
+          {note.labNoteTag && <Badge>Lab note</Badge>}
           <span class="text-base text-stone-400 tabular-nums text-right shrink-0">
             {note.date.toLocaleDateString("en-US", {
               year: "numeric",
