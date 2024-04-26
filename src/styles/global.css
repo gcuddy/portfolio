@@ -6,6 +6,12 @@
   font-weight: 300 900;
 }
 
+@font-face {
+  font-family: "Recursive";
+  src: url("/fonts/Recursive_VF_1.085.woff2") format("woff2-variations");
+  font-weight: 300 1000;
+}
+
 p {
   /* set optical size specifically since */
   /* `font-optical-sizing: auto` implementation differs */
@@ -40,13 +46,6 @@ em {
   font-weight: normal;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  /* text-wrap: balance; */
-}
-
 .text-balance {
   text-wrap: balance;
 }
@@ -58,4 +57,17 @@ h4 {
   :root {
     font-family: "Inter var", sans-serif;
   }
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: "Recursive", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  font-feature-settings: normal;
+  font-variation-settings:
+    "MONO" 1,
+    "CASL" 0.1;
+  font-size: 1em;
 }
