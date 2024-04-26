@@ -65,7 +65,15 @@ samp,
 pre {
   font-family: "Recursive", ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, "Liberation Mono", "Courier New", monospace;
-  font-feature-settings: normal;
+  font-feature-settings:
+    "dlig" 1,
+    "ss01" 1,
+    "ss02" 1,
+    "ss03" 1,
+    "ss04" 1,
+    "ss05" 1,
+    "ss06" 1,
+    "ss10" 1;
   font-variation-settings:
     "MONO" 1,
     "CASL" 0.1;
