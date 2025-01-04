@@ -10,6 +10,17 @@ const blogCollection = defineCollection({
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
 export const collections = {
+  // TODO: pull from letterboxd and e.g. last.fm as well?
+  media: defineCollection({
+    loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/media" }),
+    schema: z.object({
+      title: z.string(),
+      recommended: z.boolean().default(false),
+      date: z.coerce.date(),
+      author: z.string().optional(),
+      type: z.enum(["book", "movie"]),
+    }),
+  }),
   notes: defineCollection({
     loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/notes" }),
     schema: rssSchema.extend({

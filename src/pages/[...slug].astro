@@ -34,8 +34,6 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { entry, date } = Astro.props;
-
-const { slug } = Astro.params;
 ---
 
 <Layout title={entry.data.title}>
