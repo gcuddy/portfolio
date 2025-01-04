@@ -18,9 +18,9 @@ export async function getStaticPaths() {
   console.log({ blogEntries });
   return blogEntries.map((entry) => ({
     params: {
-      slug: dateRegex.test(entry.slug)
-        ? entry.slug.replace(dateRegex, "").slice(1)
-        : entry.slug,
+      id: dateRegex.test(entry.id)
+        ? entry.id.replace(dateRegex, "").slice(1)
+        : entry.id,
     },
     props: {
       entry,

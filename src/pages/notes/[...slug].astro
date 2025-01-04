@@ -1,9 +1,7 @@
 ---
 // get all permalinks with weird slug name
 export const prerender = true;
-import {
-  getCollection,
-} from "astro:content";
+import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Container from "../../layouts/Container.astro";
 import { dateRegex } from "../../lib/constants";
@@ -14,10 +12,10 @@ export async function getStaticPaths() {
   const blogEntries = await getCollection("lab");
   const ret = blogEntries.map((entry) => ({
     params: {
-      slug:
-        dateRegex.test(entry.slug) && entry.collection === "lab"
-          ? entry.slug.replace(dateRegex, "").slice(1)
-          : entry.slug,
+      id:
+        dateRegex.test(entry.id) && entry.collection === "lab"
+          ? entry.id.replace(dateRegex, "").slice(1)
+          : entry.id,
     },
     props: {
       entry,
@@ -34,10 +32,11 @@ const { entry, date } = Astro.props;
 
 const title = entry.data.title ?? entry.id.split(".")[0].replace(/-/g, " ");
 ---
+
 <Layout title={title}>
   <Container>
     <div class="max-w-[45rem] mx-auto">
-    <LabNote note={entry}  />
-      </div>
+      <LabNote note={entry} />
+    </div>
   </Container>
 </Layout>

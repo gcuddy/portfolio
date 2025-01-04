@@ -20,7 +20,7 @@ export const getStaticPaths = (async () => {
   return allNotes.map((note) => {
     return {
       params: {
-        slug: note.slug,
+        id: note.id,
       },
 
       props: {
