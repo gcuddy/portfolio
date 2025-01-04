@@ -4,10 +4,12 @@ import svelte from "@astrojs/svelte";
 
 import netlify from "@astrojs/netlify";
 
+import react from "@astrojs/react";
+
 export default defineConfig({
   site: "https://guscuddy.com",
   output: "static",
-  integrations: [tailwind(), svelte()],
+  integrations: [tailwind(), svelte(), react()],
   adapter: netlify(),
   redirects: {
     // "/notes": "/writing",
