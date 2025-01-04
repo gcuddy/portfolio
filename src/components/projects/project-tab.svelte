@@ -1,10 +1,5 @@
 <script lang="ts">
-  interface Tab {
-    name: string;
-    url: string;
-  }
-
-  export let tab: Tab;
+  export let tab;
   export let active = false;
   let c = "";
   export { c as class };
