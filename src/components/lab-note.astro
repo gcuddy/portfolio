@@ -2,6 +2,7 @@
 import Window from "./Window.astro";
 
 import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 
 type Note = CollectionEntry<"lab">;
 
@@ -11,7 +12,7 @@ interface Props {
 
 const { note } = Astro.props;
 
-const { Content } = await note.render();
+const { Content } = await render(note);
 
 function formatDate(date?: Date) {
   if (!date) return "";
@@ -26,7 +27,7 @@ function formatDate(date?: Date) {
 
 <Window title={note.data.title}>
   <a
-    href=`/notes/${note.slug}`
+    href=`/notes/${note.id}`
     slot="meta"
     class="text-sm shrink-0 font-medium tabular-nums"
   >

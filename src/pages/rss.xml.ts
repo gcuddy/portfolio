@@ -41,9 +41,9 @@ export async function GET(context: APIContext) {
         customData: item.data.customData,
         link:
           item.collection === "lab"
-            ? `/notes/${item.slug}`
-            : `/writing/${item.slug}`,
-        content: sanitizeHtml(parser.render(item.body)),
+            ? `/notes/${item.id}`
+            : `/writing/${item.id}`,
+        content: sanitizeHtml(parser.render(item.body || "")),
       })),
   });
 }

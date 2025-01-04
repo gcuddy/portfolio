@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import Window from "./Window.astro";
+import { render } from "astro:content";
 import { formatDate } from "../lib/utils";
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 
 const { entry, date } = Astro.props;
 
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <article
@@ -18,7 +18,7 @@ const { Content } = await entry.render();
 >
   <div
     data-type={entry.collection}
-    data-slug={entry.data.id || entry.slug}
+    data-slug={entry.id}
     data-title={entry.data.title}
     id="note-content"
     class="prose prose-stone prose-invert md:prose-lg font-system text-white mx-auto py-9"
@@ -34,7 +34,7 @@ const { Content } = await entry.render();
       }
       {
         date && (
-          <time class="text-sm font-light" dateTime={date.toISOString()}>
+          <time class="text-sm font-light" datetime={date.toISOString()}>
             {formatDate(date)}
           </time>
         )
